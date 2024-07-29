@@ -26,7 +26,7 @@ function AppRouter() {
                     <Route path="/favourites" element={<PageFavourites />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
-                <Footer author={appAuthor} />
+                <Footer />
             </div>
         </BrowserRouter>
     )
