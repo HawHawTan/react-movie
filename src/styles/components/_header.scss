@@ -5,6 +5,7 @@ header {
     width: 100%;
     height: fit-content;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     .logo-svg {
@@ -16,12 +17,20 @@ header {
         padding: 0.5rem;
     }
     .nav-links {
-        display: none;
-    }
-    .menu-open {
-        
-    }
-    .show-menu-links {
-        display: block;
+        font-family: $font;
+        font-size: 2rem;
+        font-weight: 600;
+        width: 100%;
+        background-color: $red-color;
+        text-align: center;
+        margin: 2rem;
+
+        li {
+            padding: 0.2rem 0.6rem;
+            margin: 2rem;
+            // border-bottom: solid 3px $black-color;
+            width: fit-content;
+            margin: 0 auto;
+        }
     }
 }

@@ -1,24 +1,22 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Nav from './Nav';
 
 function Header() {
-
-    // useEffect(() => {
-    //     openHamburgerMenu()
-    // }, []);
+    const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
 
     function toggleHamburgerMenu() {
-        const hamburgerMenu = document.querySelector('hamburger-menu-svg');
-        const hamburgerMenuNavLinks = document.querySelector('nav-links');
-        hamburgerMenu.classList.toggle('menu-open');
-        hamburgerMenuNavLinks.classList.toggle('show-menu-links');
+        // toggle boolean state of menu
+        setIsHamburgerMenuOpen(!isHamburgerMenuOpen);
+        console.log();
     }
 
     return (
         <header>
             <img className='logo-svg' src="./src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
-            <img onClick={toggleHamburgerMenu} className='hamburger-menu-svg' src="./src/media/hamburger-menu.svg" alt="Curtain Drop Logo" />
-            <Nav />
+
+            {/* if button clicked (check state) display open menu with nav links. Else just display button */}
+            <img onClick={toggleHamburgerMenu} className={isHamburgerMenuOpen ? 'hamburger-menu-svg menu-open' : 'hamburger-menu-svg'} src="./src/media/hamburger-menu.svg" alt="Curtain Drop Logo" />
+            {isHamburgerMenuOpen && <Nav />}
         </header>
     )
 }
