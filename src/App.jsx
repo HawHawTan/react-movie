@@ -5,9 +5,7 @@ function App() {
 
   return (
     <>
-      <main>
-        <h1>WOOO</h1>
-      </main>
+      <AppRouter />
     </>
   )
 }
