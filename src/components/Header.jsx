@@ -7,7 +7,7 @@ function Header() {
 
     return (
         <header>
-            <img src="./src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
+            <img className='logo-svg' src="./src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
         </header>
     )
 }

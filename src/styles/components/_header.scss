@@ -2,5 +2,11 @@
 
 header {
     background-color: $red-color;
-
+    width: 100%;
+    height: fit-content;
+    
+    .logo-svg {
+        max-width: 40%;
+        padding: 0.5rem;
+    }
 }
