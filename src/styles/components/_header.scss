@@ -4,9 +4,15 @@ header {
     background-color: $red-color;
     width: 100%;
     height: fit-content;
-    
+    display: flex;
+    justify-content: space-between;
+
     .logo-svg {
         max-width: 40%;
+        padding: 0.5rem;
+    }
+    .hamburger-menu-svg {
+        width: 5rem;
         padding: 0.5rem;
     }
 }
