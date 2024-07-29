@@ -1,14 +1,13 @@
-import React from 'react'
+import { getYear } from '../utilities/getDates';
 
-function Footer() {
+const Footer = ({ copyright, author }) => (
+	<footer>
+        <p>&copy; {copyright} {author}</p>
+    </footer>
+);
 
-
-
-    return (
-        <footer>
-            Footer
-        </footer>
-    )
+Footer.defaultProps = {
+    copyright: getYear()
 }
 
-export default Footer
+export default Footer;
