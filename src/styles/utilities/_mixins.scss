@@ -1,3 +1,5 @@
+@use "../utilities/vars" as *;
+
 // Mixins
 
 // Margin center...
@@ -35,4 +37,33 @@
     }
 }
 
+// flex
+@mixin flex-sb {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+@mixin flex-sb-ac {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+@mixin flex-sa {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+//   fonts
+@mixin body-font {
+    font-family: "Roboto", sans-serif;
+    color: white;
+  }
 

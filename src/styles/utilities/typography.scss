@@ -1,0 +1,13 @@
+@use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
+
+footer {
+  @include body-font;
+  font-weight: 300;
+}
+
+.about {
+  @include body-font;
+  font-weight: 700;
+}
+
