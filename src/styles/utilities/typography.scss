@@ -1,0 +1,7 @@
+@use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
+
+footer {
+  @include footer-font;
+}
+
