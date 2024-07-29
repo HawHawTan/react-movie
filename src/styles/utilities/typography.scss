@@ -6,3 +6,8 @@ footer {
   font-weight: 300;
 }
 
+.about {
+  @include body-font;
+  font-weight: 700;
+}
+
