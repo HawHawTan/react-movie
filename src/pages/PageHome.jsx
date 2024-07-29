@@ -1,4 +1,5 @@
 import React from 'react'
+import Cards from "../components/Cards"
 
 function PageHome() {
 
@@ -8,6 +9,7 @@ function PageHome() {
         <main>
             <section>
                 <h1>Curtain Drop</h1>
+                <Cards></Cards>
             </section>
         </main>
 
