@@ -3,7 +3,7 @@ import { useEffect } from "react"
 const PageAbout = () => {
 
     useEffect(() => {
-        document.title = 'About | ${appTitle}';
+        document.title = `About | ${appTitle}`;
     }, []);
 
     return (
