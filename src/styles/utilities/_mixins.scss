@@ -1,3 +1,5 @@
+@use "../utilities/vars" as *;
+
 // Mixins
 
 // Margin center...
@@ -41,14 +43,27 @@
     justify-content: space-between;
   }
   
-  @mixin flex-sa {
+@mixin flex-sb-ac {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+@mixin flex-sa {
     display: flex;
     justify-content: space-around;
   }
   
-  @mixin flex-center {
+@mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
+
+//   fonts
+@mixin footer-font {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: white;
+  }
