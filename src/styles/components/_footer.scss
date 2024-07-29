@@ -1,6 +1,14 @@
 @use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/typography" as *;
 
 footer {
     background-color: $red-color;
-    
+    @include flex-sb-ac;
+
+        img {
+            width: 8rem;
+        }
+
+    padding: 0 1rem;
 }
