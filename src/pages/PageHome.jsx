@@ -10,6 +10,7 @@ function PageHome() {
                 <h1>Curtain Drop</h1>
             </section>
         </main>
+
     )
 }
 
