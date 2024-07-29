@@ -1,13 +1,11 @@
 import './styles/styles.scss';
-import Card from "./components/Cards";
+import AppRouter from './routers/AppRouter';
 
 function App() {
 
   return (
     <>
-      <main>
-        <Card></Card>
-      </main>
+      <AppRouter />
     </>
   )
 }
