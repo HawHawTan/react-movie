@@ -1,12 +1,12 @@
 import './styles/styles.scss';
-
+import Card from "./components/Cards";
 
 function App() {
 
   return (
     <>
       <main>
-        <h1>WOOO</h1>
+        <Card></Card>
       </main>
     </>
   )
