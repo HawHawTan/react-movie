@@ -4,13 +4,13 @@
 
 footer {
     background-color: $red-color;
+    padding: 0 1rem;
     @include flex-sb-ac;
-
+    
     img {
         width: 8rem;
     }
-
-    padding: 0 1rem;
+    
 }
 
 @media (20em <= width <= 51.25em ) {

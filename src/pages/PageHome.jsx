@@ -7,9 +7,7 @@ function PageHome() {
 
     return (
         <main>
-            <section>
-                <Cards />
-            </section>
+            <Cards />
         </main>
 
     )
