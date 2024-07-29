@@ -18,7 +18,6 @@ function AppRouter() {
         <BrowserRouter>
             <div className="wrapper">
                 <Header />
-                <Nav />
                 <Routes>
                     <Route path="/" exact element={<PageHome />} />
                     <Route path="/about" element={<PageAbout />} />

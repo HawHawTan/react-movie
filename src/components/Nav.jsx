@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
 function Nav() {
+
+
+
     return (
-        <nav>
+        <nav className='nav-links'>
             <ul>
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/favourites">Favourites</NavLink></li>
