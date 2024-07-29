@@ -1,4 +1,6 @@
+@use "../utilities/vars" as *;
+
 header {
-    background-color: #97273B;
-    
+    background-color: $red-color;
+
 }
