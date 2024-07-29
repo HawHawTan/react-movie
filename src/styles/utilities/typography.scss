@@ -2,6 +2,6 @@
 @use "../utilities/mixins" as *;
 
 footer {
-  @include footer-font;
+  @include body-font;
 }
 
