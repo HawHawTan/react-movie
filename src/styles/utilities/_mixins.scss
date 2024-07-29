@@ -67,3 +67,8 @@
     font-weight: 300;
     color: white;
   }
+
+@mixin about-font {
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
