@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom'
+
 
 function Cards() {
   const api = import.meta.env.VITE_API_KEY;
@@ -28,9 +30,9 @@ function Cards() {
       <ul>
         {movie && movie.map(item => {
           return (
-            <li key={item.id}>
-              <img src={`https://image.tmdb.org/t/p/w185${item.poster_path}`} alt="" />
-              {/* <p>{item.title}</p> */}
+            <li key={item.id} >
+              <Link to={`/details/${item.id}`}><img src={`https://image.tmdb.org/t/p/w185${item.poster_path}`} alt={item.title} /></Link>
+              <p>{item.title}</p>
             </li>
           )
         })}
