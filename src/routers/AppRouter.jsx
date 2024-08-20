@@ -7,7 +7,6 @@ import PageAbout from '../pages/PageAbout';
 import PageFavourites from '../pages/PageFavourites';
 import PageDetails from '../pages/PageDetails';
 import PageNotFound from '../pages/PageNotFound';
-
 function AppRouter() {
     return (
         <BrowserRouter>
@@ -18,13 +17,11 @@ function AppRouter() {
                     <Route path="/about" element={<PageAbout />} />
                     <Route path="/details/:id" element={<PageDetails />} />
                     <Route path="/favourites" element={<PageFavourites />} />
-                    <Route path="/details/:id" element={<PageDetails />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
                 <Footer />
             </div>
         </BrowserRouter>
-    );
+    )
 }
-
-export default AppRouter;
+export default AppRouter
