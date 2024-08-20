@@ -6,7 +6,9 @@ a {
 }
 
 main {
-    background-color: orange;
+    background-color: $black-color;
+    color: $white-color;
+
     h1 {
         color: red;
     }
