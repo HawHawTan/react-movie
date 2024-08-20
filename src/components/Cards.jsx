@@ -5,17 +5,17 @@ function Cards() {
     const [movie,setMovie] = useState(null);
     const [category, setCategory] = useState('now_playing');
 
-    useEffect(()=>{
-       
-    },[])
-
     const getMovie =(c) =>{
       fetch(`https://api.themoviedb.org/3/movie/${c}?language=en-US&page=1&api_key=${api}` )
       .then(response => response.json())
       .then(response => setMovie(response.results))
-
       .catch(err => console.error(err));
     }
+    useEffect(()=>{
+      getMovie('now_playing');
+    },[])
+
+
   return (
     <div>
         <h2>{category}</h2>
@@ -30,7 +30,7 @@ function Cards() {
                 return(
                     <li key={item.id}>
                       <img src={`https://image.tmdb.org/t/p/w185${item.poster_path}`} alt="" />
-                      <p>{item.title}</p>
+                      {/* <p>{item.title}</p> */}
                     </li>
                 )
             })}
