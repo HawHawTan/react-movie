@@ -12,10 +12,12 @@ header {
         max-width: 40%;
         padding: 0.5rem;
     }
+
     .hamburger-menu-svg {
         width: 5rem;
         padding: 0.5rem;
     }
+
     .nav-links {
         font-family: $font;
         font-size: 2rem;
@@ -29,7 +31,7 @@ header {
             padding: 0.2rem 0.6rem;
             margin: 2rem;
             // border-bottom: solid 3px $black-color;
-            width: fit-content;
+            width: 100%;
             margin: 0 auto;
         }
     }
