@@ -1,127 +1,148 @@
 @use "../utilities/vars" as *;
-#movies-category{
+
+// #movies-category{
+//     display: flex;
+//     justify-content: space-evenly;
+//     padding: 0.5rem 0;
+//     background-color: #0D0D0D;
+//     width: 50%;
+//     margin: 0 auto;
+//     border-radius: 2rem;
+
+//     button{
+//         border: 4px $red-color solid;
+//         padding: 1rem 2rem;
+//         border-radius: 2rem;
+//         color: white;
+//         transition: $transiting; 
+//         &:hover{
+//             background-color: $red-color;
+//             transition: $transiting; 
+//         }
+//     }
+// }
+
+ul{
     display: flex;
-    justify-content: space-evenly;
-    padding: 0.5rem 0;
-    background-color: #0D0D0D;
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 2rem;
+    flex-direction: column;
+    align-items: center;
+    li{
 
-    button{
-        border: 4px $red-color solid;
-        padding: 1rem 2rem;
-        border-radius: 2rem;
-        color: white;
-        transition: $transiting; 
-        &:hover{
-            background-color: $red-color;
-            transition: $transiting; 
-        }
-    }
-}
+        margin:2rem;
 
-
-ul {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
-
-    li {
-        position: relative; 
-        margin: 1rem;
-        overflow: hidden;
-        transition: $transiting; 
-        img {
-            width: 100%;
-            border-radius: 0.5rem; 
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); 
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: $transiting; 
-            border-radius: 0.5rem; 
-            text-align: center;
-            button{
-                position: absolute;
-                bottom: 2rem;
-                left: 1rem;
-                padding: 0.5rem 1rem;
-                border-radius: 0.5rem;
-                background-color: white;
-            }
-            h3{
-                top: 2rem;
-                position: absolute;
-                font-weight: bold;
-            }
-        }
-
-        &:hover .overlay {
-            opacity: 1;
-        }
-    }
-}
-
-
-@media (max-width:$tablet-small) {
-    #movies-category{
-        width: 65%;
+        h3,p{
+            display: none
+        };
         button{
-            padding: 1rem 2rem;
-
+            // mar
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background-color: white;
         }
     }
-    ul {
-        grid-template-columns: repeat(4, 1fr); 
-    }
-
-    li {
-        margin: 0.5rem;
-
-        .overlay {
-            font-size: 0.9rem;
-            padding: 0.8rem;
-        }
-    }
+    
 }
 
-/* For small devices like phones */
-@media (max-width: 768px) {
-    ul {
-        grid-template-columns: repeat(2, 1fr); 
-    }
+// ul {
+//     display: grid;
+//     grid-template-columns: repeat(6, 1fr);
+//     gap: 1rem;
 
-    li {
-        margin: 0.5rem;
+//     li {
+//         position: relative; 
+//         margin: 1rem;
+//         overflow: hidden;
+//         transition: $transiting; 
+//         img {
+//             width: 100%;
+//             border-radius: 0.5rem; 
+//         }
+//         .overlay {
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//             height: 100%;
+//             background-color: rgba(0, 0, 0, 0.5); 
+//             color: white;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             opacity: 0;
+//             transition: $transiting; 
+//             border-radius: 0.5rem; 
+//             text-align: center;
+//             button{
+//                 position: absolute;
+//                 bottom: 2rem;
+//                 left: 1rem;
+//                 
+//                 border-radius: 0.5rem;
+//                 background-color: white;
+//             }
+//             h3{
+//                 top: 2rem;
+//                 position: absolute;
+//                 font-weight: bold;
+//             }
+//         }
 
-        .overlay {
-            font-size: 0.8rem; 
-            padding: 0.5rem; 
-        }
-    }
-}
+//         &:hover .overlay {
+//             opacity: 1;
+//         }
+//     }
+// }
 
-@media (max-width: 480px) {
-    ul {
-        grid-template-columns: 1fr;
-    }
 
-    li {
-        margin: 0.5rem;
+// @media (max-width:$tablet-small) {
+//     #movies-category{
+//         width: 65%;
+//         button{
+//             padding: 1rem 2rem;
 
-        .overlay {
-            font-size: 0.75rem; 
-            padding: 0.5rem;
-        }
-    }
-}
+//         }
+//     }
+//     ul {
+//         grid-template-columns: repeat(4, 1fr); 
+//     }
+
+//     li {
+//         margin: 0.5rem;
+
+//         .overlay {
+//             font-size: 0.9rem;
+//             padding: 0.8rem;
+//         }
+//     }
+// }
+
+// /* For small devices like phones */
+// @media (max-width: 768px) {
+//     ul {
+//         grid-template-columns: repeat(2, 1fr); 
+//     }
+
+//     li {
+//         margin: 0.5rem;
+
+//         .overlay {
+//             font-size: 0.8rem; 
+//             padding: 0.5rem; 
+//         }
+//     }
+// }
+
+// @media (max-width: 480px) {
+//     ul {
+//         grid-template-columns: 1fr;
+//     }
+
+//     li {
+//         margin: 0.5rem;
+
+//         .overlay {
+//             font-size: 0.75rem; 
+//             padding: 0.5rem;
+//         }
+//     }
+// }
