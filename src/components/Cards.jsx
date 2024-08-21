@@ -18,9 +18,10 @@ function Cards() {
   }, [])
 
 
-  function addFav(movieTitle) {
+  function addFav(movieData) {
     // add movie to favourites
-    localStorage.setItem("favTitle", movieTitle);
+    localStorage.setItem("favTitle", movieData.title);
+    localStorage.setItem("favImg", movieData.poster_path);
   }
 
   return (
@@ -40,7 +41,7 @@ function Cards() {
                 <h3>{item.title}</h3>
                 <p>{item.overview}</p>
                 <button>More Info</button>
-                <button onClick={() => { addFav(item.title) }}>Fav!</button>
+                <button onClick={() => { addFav(item) }}>Fav!</button>
 
               </div>
             </li>
