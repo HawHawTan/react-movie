@@ -18,6 +18,7 @@ function Cards() {
   }, [])
 
 
+
   return (
     <div>
       <div id="movies-category">
@@ -35,6 +36,9 @@ function Cards() {
                 <h3>{item.title}</h3>
                 <p>{item.overview}</p>
                 <button>More Info</button>
+                {/* <button onClick={}>Fav!</button> */}
+                {/* button that adds movie to favourties */}
+
               </div>
             </li>
           )
