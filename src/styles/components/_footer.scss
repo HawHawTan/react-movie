@@ -1,6 +1,37 @@
 @use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/typography" as *;
 
 footer {
     background-color: $red-color;
+    padding: 0 1rem;
+    @include flex-sb-ac;
     
+    img {
+        width: 8rem;
+        padding: 1rem;
+    }
+    
+}
+
+@media (20em <= width <= 51.25em ) {
+    footer {
+        p {
+            display: none;
+        }
+
+        figure {
+            margin: 0 auto;
+        }
+
+        img {
+            padding: 1rem 0;
+        }
+    }
+}
+
+@media (width <= 20rem) {
+    footer {
+        display: none;
+    }
 }

@@ -1,0 +1,26 @@
+@use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/typography" as *;
+
+.about-bg {
+    background-color: $black-color;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+    height: 75vh;
+    max-width: 37rem;
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        text-align: start;
+    }
+}
