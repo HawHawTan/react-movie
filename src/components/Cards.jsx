@@ -20,19 +20,22 @@ function Cards() {
 
   return (
     <div>
-      <h2>{category}</h2>
-      <div>
+      <div id="movies-category">
         <button onClick={() => getMovie('now_playing')}>Now Playing</button>
         <button onClick={() => getMovie('popular')}>Popular</button>
         <button onClick={() => getMovie('top_rated')}>Top Rated</button>
         <button onClick={() => getMovie('upcoming')}>Upcoming</button>
-      </div>
+      </div >
       <ul>
         {movie && movie.map(item => {
           return (
             <li key={item.id} >
-              <Link to={`/details/${item.id}`}><img src={`https://image.tmdb.org/t/p/w185${item.poster_path}`} alt={item.title} /></Link>
-              <p>{item.title}</p>
+              <Link to={`/details/${item.id}`}><img src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} alt={item.title} /></Link>
+              <div className="overlay">
+                <h3>{item.title}</h3>
+                <p>{item.overview}</p>
+                <button>More Info</button>
+              </div>
             </li>
           )
         })}

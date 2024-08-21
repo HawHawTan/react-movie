@@ -4,11 +4,10 @@ a {
     text-decoration: none;
     color: $white-color;
 }
-
-main {
-    background-color: $black-color;
-    color: $white-color;
-
+// i change this to body instead of main
+body {
+    // background-color: orange;
+    background-color: #222222;
     h1 {
         color: red;
     }
