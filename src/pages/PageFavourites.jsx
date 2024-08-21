@@ -5,10 +5,12 @@ import { useEffect } from 'react';
 
 function PageFavourites() {
 
+    const favTitle = localStorage.getItem("favTitle");
+
     return (
         <section>
             <h2>Your Favourites</h2>
-
+            <h3>{favTitle}</h3>
         </section>
     )
 }
