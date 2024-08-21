@@ -1,0 +1,61 @@
+@use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/typography" as *;
+
+.backdrop-movie {
+    display: none;
+    height: 32.5rem;
+}
+
+.poster-movie {
+    width: 18.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 1.25rem;
+}
+
+.title-detail {
+    color: white;
+    font-weight: bold;
+    font-size: 2.25rem;
+    text-align: center;
+}
+
+.date-detail {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.p-detail {
+    margin: 1.5rem 1rem;
+}
+
+.rating-detail {
+    display: inline-block;
+    border-radius: 50%;
+    border: 3px solid lightgreen;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    line-height: 3.375rem;
+    box-shadow: 0 0 0 3px lightgreen;
+    display: flex;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.rating-value {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
