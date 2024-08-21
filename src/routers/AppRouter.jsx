@@ -10,9 +10,6 @@ import PageDetails from '../pages/PageDetails';
 import PageNotFound from '../pages/PageNotFound';
 
 function AppRouter() {
-
-
-
     return (
         <BrowserRouter>
             <div className="wrapper">
