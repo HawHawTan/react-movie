@@ -1,14 +1,14 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 
-function movieContext() {
+function MovieContext() {
 
-    const [favs, setFavs] = useState([]);
+    const [favs, setFavs] = useState("I am the favourite!");
 
     return (
         <div>
-
+            {favs}
         </div>
     )
 }
 
-export default movieContext;
+export default MovieContext;

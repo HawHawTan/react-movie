@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
 
 
@@ -6,6 +6,7 @@ function Cards() {
   const api = import.meta.env.VITE_API_KEY;
   const [movie, setMovie] = useState(null);
   const [category, setCategory] = useState('now_playing');
+  const [favs, setFavs] = useState([]);
 
   const getMovie = (c) => {
     fetch(`https://api.themoviedb.org/3/movie/${c}?language=en-US&page=1&api_key=${api}`)
@@ -17,11 +18,22 @@ function Cards() {
     getMovie('now_playing');
   }, [])
 
+  useEffect(() => {
+    const movieDataString = JSON.stringify(favs);
+
+    localStorage.setItem("movieData", movieDataString);
+  }, [favs])
 
   function addFav(movieData) {
     // add movie to favourites
-    localStorage.setItem("favTitle", movieData.title);
-    localStorage.setItem("favImg", movieData.poster_path);
+    // const favs = useContext(FavContext);
+
+    // localStorage.setItem("favMsg", favs);
+
+    // build array of movie objects selected
+
+    setFavs([...favs, movieData]);
+
   }
 
   return (
