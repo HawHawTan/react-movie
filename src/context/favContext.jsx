@@ -21,5 +21,3 @@ export const FavProvider = ({ children }) => {
         </FavContext.Provider>
     )
 }
-
-
