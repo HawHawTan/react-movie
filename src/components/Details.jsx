@@ -53,10 +53,12 @@ const Details = () => {
                     <p className='rating-detail'>
                         <span className='rating-value'>{formatRating(movie.vote_average)}</span>
                     </p>
+                    <div className='text-detail-wrap'>
                     <h1 className='title-detail'>{movie.title}</h1>
                     <p className='date-detail'>{formatDateWithOrdinal(movie.release_date)}</p>
 
                     <p className='p-detail'>{movie.overview}</p>
+                    </div>
                 </div>
             </div>
         </section>

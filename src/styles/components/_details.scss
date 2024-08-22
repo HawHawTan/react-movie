@@ -85,3 +85,25 @@
         margin: 3.4rem 7.5rem 6.5rem;
     }
 }
+
+
+@media (min-width: 120em) {
+    .poster-movie {
+        margin-top: -15rem;
+        margin-left: 14rem;
+        width: 22rem;
+    }
+
+    .rating-detail {
+        margin-left: 10rem;
+    }
+
+    .text-detail-wrap {
+        max-width: 35.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: -20rem;
+    }
+}
