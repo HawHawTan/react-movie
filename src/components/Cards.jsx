@@ -34,6 +34,7 @@ function Cards({getMovie,movies}){
                         <h3>{item.title}</h3>
                         <p>{item.overview}</p>
                         <Link to={`/details/${item.id}`}><button>More Info</button></Link>
+                        <img id='heart' src="./src/media/heart-hover.svg" alt="" />
                       </div>
                     </li>
                 )
