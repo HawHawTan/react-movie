@@ -3,7 +3,12 @@
 #movies-category-desktop{
     display: none;
 }
-
+#backdrop{
+    object-fit: cover;
+    width: 100%;
+    height: 900px;
+    margin: 0 auto;
+}
 #movies-category-mobile{
     display: flex;
     justify-content: space-evenly;
@@ -24,7 +29,7 @@
     }
 }
 
-ul{
+#cards-ul{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +98,7 @@ ul{
             }
         }
     }
-    ul{
+    #cards-ul{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -108,7 +113,7 @@ ul{
             padding: 1rem 3rem;
         }
     }
-    ul {
+    #cards-ul {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         margin:0  1rem;

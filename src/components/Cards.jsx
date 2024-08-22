@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Slider from "react-slick";
 import { Link } from 'react-router-dom'
 
 
@@ -17,20 +18,17 @@ function Cards({getMovie,movies}){
     }
     return truncated + '...';  // In case there's no space
   }
- 
+
   return (
-    <div>
+    <div> 
        <div id="movies-category-desktop">
           <button onClick={() => getMovie('popular')}>Popular</button>
           <button onClick={() => getMovie('top_rated')}>Top Rated</button>
           <button onClick={() => getMovie('upcoming')}>Upcoming</button>
           <button onClick={() => getMovie('now_playing')}>Now Playing</button>
         </div>
-        <ul>
+        <ul id="cards-ul">
             { movies && movies.map(item => {
-              console.log('====================================');
-              console.log(item.title);
-              console.log('====================================');
                 return(
                     <li key={item.id} >
                       <Link to={`/details/${item.id}`}><img src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} alt={item.title}/></Link>
@@ -48,5 +46,7 @@ function Cards({getMovie,movies}){
         </ul>
     </div>
   );
-}
+}{/* <div><img src={`https://image.tmdb.org/t/p/w342${movies[0].backdrop_path}`} alt="" /></div>
+            <div></div>
+            <div></div> */}
 export default Cards
