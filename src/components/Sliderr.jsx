@@ -7,7 +7,7 @@ function Sliderr({ movies }) {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    // speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

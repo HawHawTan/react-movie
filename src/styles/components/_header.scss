@@ -25,16 +25,18 @@ header {
     }
 
     .nav-links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         font-family: $font;
         font-size: 1.7rem;
         font-weight: 600;
         width: 100%;
         background-color: $red-color;
         text-align: center;
-        margin: 2rem;
+        padding-right: 5rem;
 
         .nav-list {
-            display: flex;
             padding: 0.2rem 0.6rem;
             margin: 2rem;
             width: fit-content;
@@ -47,10 +49,19 @@ header {
             margin: 0;
             width: auto;
             background-color: transparent;
+
         }
     }
 
     .menu-open .nav-links {
         display: block; // Ensure the nav links are displayed when the menu is open on smaller screens
     }
+
+    .nav-link-list {
+        @media (min-width: 20em ) {
+            display: flex;
+        }
+    }
+
+    
 }
