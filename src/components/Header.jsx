@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link component
 import Nav from './Nav';
 
 function Header() {
@@ -23,7 +24,9 @@ function Header() {
 
     return (
         <header>
-            <img className='logo-svg' src="/src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
+            <Link to="/"> {/* Use Link to navigate to the home page */}
+                <img className='logo-svg' src="/src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
+            </Link>
 
             {isSmallScreen && (
                 <img
