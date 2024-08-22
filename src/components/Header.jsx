@@ -9,7 +9,7 @@ function Header() {
         function handleResize() {
             setIsSmallScreen(window.innerWidth <= 320);
             if (window.innerWidth > 320) {
-                setIsHamburgerMenuOpen(false); // Close the hamburger menu when resizing to a larger screen
+                setIsHamburgerMenuOpen(false);
             }
         }
 
