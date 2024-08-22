@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
+import { FavContext } from "../context/favContext";
 
 
 function Cards() {
   const api = import.meta.env.VITE_API_KEY;
   const [movie, setMovie] = useState(null);
   const [category, setCategory] = useState('now_playing');
-  const [favs, setFavs] = useState([]);
+
+  const { favs, setFavs } = useContext(FavContext);
 
   const getMovie = (c) => {
     fetch(`https://api.themoviedb.org/3/movie/${c}?language=en-US&page=1&api_key=${api}`)
@@ -18,19 +20,8 @@ function Cards() {
     getMovie('now_playing');
   }, [])
 
-  useEffect(() => {
-    const movieDataString = JSON.stringify(favs);
-
-    localStorage.setItem("movieData", movieDataString);
-  }, [favs])
-
   function addFav(movieData) {
     // add movie to favourites
-    // const favs = useContext(FavContext);
-
-    // localStorage.setItem("favMsg", favs);
-
-    // build array of movie objects selected
 
     setFavs([...favs, movieData]);
 
