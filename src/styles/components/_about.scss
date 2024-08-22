@@ -24,3 +24,17 @@
         text-align: start;
     }
 }
+
+@media (max-width: 20rem) {
+    .about {
+        margin: 1rem;
+        font-size: 1.25rem;
+
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+
+
