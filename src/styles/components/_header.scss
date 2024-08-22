@@ -7,16 +7,23 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 1rem;   //i added this
+    margin-bottom: 1rem;
 
     .logo-svg {
-        max-width: 40%;
+        width: 12rem;
         padding: 0.5rem;
     }
+
     .hamburger-menu-svg {
-        width: 5rem;
+        width: 4rem;
         padding: 0.5rem;
+        display: block; // Default to showing the hamburger menu
+
+        @media (min-width: 321px) {
+            display: none; // Hide the hamburger menu for screens wider than 320px
+        }
     }
+
     .nav-links {
         font-family: $font;
         font-size: 2rem;
@@ -29,9 +36,20 @@ header {
         li {
             padding: 0.2rem 0.6rem;
             margin: 2rem;
-            // border-bottom: solid 3px $black-color;
             width: fit-content;
             margin: 0 auto;
         }
+
+        @media (min-width: 321px) {
+            display: flex; // Always show the nav links for screens wider than 320px
+            justify-content: space-around;
+            margin: 0;
+            width: auto;
+            background-color: transparent;
+        }
+    }
+
+    .menu-open .nav-links {
+        display: block; // Ensure the nav links are displayed when the menu is open on smaller screens
     }
 }

@@ -3,22 +3,40 @@ import Nav from './Nav';
 
 function Header() {
     const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 320);
+
+    useEffect(() => {
+        function handleResize() {
+            setIsSmallScreen(window.innerWidth <= 320);
+            if (window.innerWidth > 320) {
+                setIsHamburgerMenuOpen(false); // Close the hamburger menu when resizing to a larger screen
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     function toggleHamburgerMenu() {
-        // toggle boolean state of menu
         setIsHamburgerMenuOpen(!isHamburgerMenuOpen);
-        console.log();
     }
 
     return (
         <header>
             <img className='logo-svg' src="/src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
 
-            {/* if button clicked (check state) display open menu with nav links. Else just display button */}
-            <img onClick={toggleHamburgerMenu} className={isHamburgerMenuOpen ? 'hamburger-menu-svg menu-open' : 'hamburger-menu-svg'} src="/src/media/hamburger-menu.svg" alt="Curtain Drop Logo" />
-            {isHamburgerMenuOpen && <Nav />}
+            {isSmallScreen && (
+                <img
+                    onClick={toggleHamburgerMenu}
+                    className={isHamburgerMenuOpen ? 'hamburger-menu-svg menu-open' : 'hamburger-menu-svg'}
+                    src="/src/media/hamburger-menu.svg"
+                    alt="Curtain Drop Logo"
+                />
+            )}
+            
+            {(!isSmallScreen || isHamburgerMenuOpen) && <Nav />}
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;
