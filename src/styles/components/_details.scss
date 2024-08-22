@@ -62,7 +62,7 @@
 @media (min-width: 51.25em) {
     .backdrop-movie {
         display: block;
-        object-view-box: inset(0% 0% 51.25em 0%);
+        object-view-box: inset(5rem 0% 45rem 0%);
 
     }
 
@@ -102,8 +102,12 @@
         max-width: 35.2rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
         margin: 0 auto;
         margin-top: -20rem;
+    }
+
+    .title-detail,
+    .date-detail {
+        text-align: start;
     }
 }
