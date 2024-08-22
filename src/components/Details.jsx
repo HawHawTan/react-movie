@@ -50,13 +50,11 @@ const Details = () => {
                 
                 {/* Movie information */}
                 <div className="movie-info">
-                    <h1 className='title-detail'>{movie.title}</h1>
-                    <p className='date-detail'>{formatDateWithOrdinal(movie.release_date)}</p>
-
-
                     <p className='rating-detail'>
                         <span className='rating-value'>{formatRating(movie.vote_average)}</span>
                     </p>
+                    <h1 className='title-detail'>{movie.title}</h1>
+                    <p className='date-detail'>{formatDateWithOrdinal(movie.release_date)}</p>
 
                     <p className='p-detail'>{movie.overview}</p>
                 </div>

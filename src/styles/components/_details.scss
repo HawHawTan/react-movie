@@ -4,7 +4,7 @@
 
 .backdrop-movie {
     display: none;
-    height: 32.5rem;
+    margin-top: -1rem;
 }
 
 .poster-movie {
@@ -24,11 +24,13 @@
 }
 
 .date-detail {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-align: center;
+    margin-top: 1rem;
 }
 
 .p-detail {
+    font-size: 1.2rem;
     margin: 1.5rem 1rem;
 }
 
@@ -57,5 +59,29 @@
     vertical-align: middle;
 }
 
+@media (min-width: 51.25em) {
+    .backdrop-movie {
+        display: block;
+        object-view-box: inset(0% 0% 51.25em 0%);
 
+    }
 
+    .poster-movie {
+        margin-top: -10rem;
+        width: 14rem;
+    }
+
+    .title-detail {
+        font-size: 4.5rem;
+    }
+
+    .date-detail {
+        font-size: 1.2rem;
+        text-align: start;
+        margin-left: 1rem;
+    }
+
+    .movie-info {
+        margin: 3.4rem 7.5rem 6.5rem;
+    }
+}
