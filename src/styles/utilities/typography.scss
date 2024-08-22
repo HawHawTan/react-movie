@@ -11,3 +11,7 @@ footer {
   font-weight: 700;
 }
 
+h1, p {
+  @include body-font;
+}
+
