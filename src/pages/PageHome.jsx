@@ -13,6 +13,9 @@ function PageHome() {
             .then(response => setMovie(response.results))
             .catch(err => console.error(err));
     };
+    useEffect(() => {
+        getMovie('now_playing');
+    }, []);
     
     return (
         <main>
