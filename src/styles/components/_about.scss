@@ -2,6 +2,40 @@
 @use "../utilities/mixins" as *;
 @use "../utilities/typography" as *;
 
-.about {
-    align-items: center;
+.about-bg {
+    background-color: $black-color;
 }
+
+.about {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+    height: 75vh;
+    max-width: 39rem;
+    padding: 1.5rem;
+
+    h2 {
+        font-size: 1.875rem;
+    }
+
+    p {
+        text-align: start;
+    }
+}
+
+@media (max-width: 20rem) {
+    .about {
+        font-size: 1.25rem;
+
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+
+

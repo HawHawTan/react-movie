@@ -12,10 +12,10 @@ function Header() {
 
     return (
         <header>
-            <img className='logo-svg' src="./src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
+            <img className='logo-svg' src="/src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
 
             {/* if button clicked (check state) display open menu with nav links. Else just display button */}
-            <img onClick={toggleHamburgerMenu} className={isHamburgerMenuOpen ? 'hamburger-menu-svg menu-open' : 'hamburger-menu-svg'} src="./src/media/hamburger-menu.svg" alt="Curtain Drop Logo" />
+            <img onClick={toggleHamburgerMenu} className={isHamburgerMenuOpen ? 'hamburger-menu-svg menu-open' : 'hamburger-menu-svg'} src="/src/media/hamburger-menu.svg" alt="Curtain Drop Logo" />
             {isHamburgerMenuOpen && <Nav />}
         </header>
     )

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Details from '../components/Details';
 
-function PageDetails() {
-    return (
-        <div>PageDetails</div>
-    )
-}
+const PageDetails = () => {
+  return (
+    <div>
+      <Details />
+    </div>
+  );
+};
 
-export default PageDetails
+export default PageDetails;
