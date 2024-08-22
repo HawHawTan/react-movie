@@ -7,6 +7,7 @@
 }
 
 .about {
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,9 +16,10 @@
     text-align: center;
     height: 75vh;
     max-width: 37rem;
+    padding: 1rem;
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.875rem;
     }
 
     p {
@@ -27,7 +29,6 @@
 
 @media (max-width: 20rem) {
     .about {
-        margin: 1rem;
         font-size: 1.25rem;
 
         h2 {
