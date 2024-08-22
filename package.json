@@ -13,13 +13,9 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^6.25.1",
-<<<<<<< HEAD
-    "react-router-dom": "^6.26.1"
-=======
     "react-router-dom": "^6.25.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1"
->>>>>>> staging
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
