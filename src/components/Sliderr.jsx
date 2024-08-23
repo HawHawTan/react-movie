@@ -35,10 +35,10 @@ function Sliderr({ movies }) {
     dots: false,
     arrows: false,
     infinite: true,
-    // speed: 500,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
   };
 
   if (!movies || movies.length === 0) {
@@ -52,7 +52,7 @@ function Sliderr({ movies }) {
           <div id="hero-wrapper" key={movie.id}>
              <Link to={`/details/${movie.id}`}>
               <img id="backdrop"  src={`https://image.tmdb.org/t/p/${
-            isMobile ? "w342" : "w1280"}${isMobile ? movie.poster_path : movie.backdrop_path}`}
+            isMobile ? "w342" : "original"}${isMobile ? movie.poster_path : movie.backdrop_path}`}
               alt={movie.title || "Movie"}/>
              </Link>
              <div id="hero-desktop">
