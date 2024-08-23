@@ -18,11 +18,41 @@ function Cards() {
     getMovie('now_playing');
   }, [])
 
-  function addFav(movieData) {
-    // add movie to favourites (local storage)
-    const favMovieDataStringified = JSON.stringify(movieData);
-    setFavs([...favs, favMovieDataStringified]);
-    localStorage.setItem('movieData', favs);
+  // add to local storage when favourite function is run with use effect
+  useEffect(() => {
+    const favMovieDataStringified = JSON.stringify(favs);
+    localStorage.setItem('movieData', favMovieDataStringified);
+  }, [toggleFav])
+
+  function toggleFav(movieData) {
+
+    // check if movie id is already in favs
+    if (favs.length > 0) {
+      const storedFavs = JSON.parse(localStorage.getItem('movieData'));
+      let movieAlreadyFavourited = false;
+      storedFavs.map((storedFav) => {
+
+        if (storedFav.id == movieData.id) {
+          movieAlreadyFavourited = true;
+        } else {
+          movieAlreadyFavourited = false;
+        }
+      });
+
+      if (!movieAlreadyFavourited) {
+        setFavs([...favs, movieData]);
+      } else {
+        // remove from favs
+        console.log("remove this movvie from favs");
+
+      }
+
+    } else {
+      // if first movie
+      // add movie to favourites (local storage)
+      setFavs([...favs, movieData]);
+    }
+
   }
 
   return (
@@ -42,7 +72,7 @@ function Cards() {
                 <h3>{item.title}</h3>
                 <p>{item.overview}</p>
                 <button>More Info</button>
-                <button onClick={() => { addFav(item) }}>{favs}</button>
+                <button onClick={() => { toggleFav(item) }}>LET ME BE YOUR FAVOURITE!!!</button>
 
               </div>
             </li>
