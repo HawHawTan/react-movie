@@ -59,7 +59,7 @@
     vertical-align: middle;
 }
 
-@media (min-width: 51.25em) {
+@media (min-width: $desktop) {
     .backdrop-movie {
         display: block;
         object-view-box: inset(5rem 0% 45rem 0%);
@@ -87,7 +87,7 @@
 }
 
 
-@media (min-width: 120rem) {
+@media (min-width: $desktop-larger) {
     .poster-movie {
         margin-top: -15rem;
         margin-left: 14rem;
