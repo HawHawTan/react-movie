@@ -1,17 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import { Link } from 'react-router-dom'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function Sliderr({ movies }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+  const truncateString = (str) => {
+    if (str.length <= 10) {
+      return str;
+    }
+    const truncated = str.slice(0, 100).trim();
+    const lastSpaceIndex = truncated.lastIndexOf(' ');
+
+    if (lastSpaceIndex > 0) {
+        return truncated.slice(0, lastSpaceIndex) + '...';
+    }
+    return truncated + '...';  // In case there's no space
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
   const settings = {
-    dots: true,
+    dots: false,
+    arrows: false,
     infinite: true,
-    speed: 500,
+    // speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
+    // autoplay: true,
   };
 
   if (!movies || movies.length === 0) {
@@ -21,14 +48,26 @@ function Sliderr({ movies }) {
   return (
     <div>
       <Slider {...settings}>
-        {movies.map((movie, index) => (
-          <div key={index}>
-            <img 
-              id="backdrop"
-              src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-              alt={movie.title || "Movie"}
-            />
+        {movies.map((movie) => (
+          <div id="hero-wrapper" key={movie.id}>
+             <Link to={`/details/${movie.id}`}>
+              <img id="backdrop"  src={`https://image.tmdb.org/t/p/${
+            isMobile ? "w342" : "w1280"}${isMobile ? movie.poster_path : movie.backdrop_path}`}
+              alt={movie.title || "Movie"}/>
+             </Link>
+             <div id="hero-desktop">
+               <div id="hero-info">
+                  <h2>{movie.title}</h2>
+                  <p>{truncateString(movie.overview)}</p>
+                  <div id="slider-buttons">
+                  <Link to={`/details/${movie.id}`}><button>More Info</button></Link>
+                  <img id='heart' src="./src/media/heart-hover.svg" alt="heart" />
+                </div>
+              </div>
+             </div>
+             
           </div>
+
         ))}
       </Slider>
     </div>
