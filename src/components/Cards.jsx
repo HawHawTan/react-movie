@@ -1,13 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
-import { FavContext } from "../context/favContext";
-
+import { FavContext } from "../App";
 
 function Cards() {
   const api = import.meta.env.VITE_API_KEY;
   const [movie, setMovie] = useState(null);
   const [category, setCategory] = useState('now_playing');
-
   const { favs, setFavs } = useContext(FavContext);
 
   const getMovie = (c) => {
@@ -21,10 +19,10 @@ function Cards() {
   }, [])
 
   function addFav(movieData) {
-    // add movie to favourites
-
-    setFavs([...favs, movieData]);
-
+    // add movie to favourites (local storage)
+    const favMovieDataStringified = JSON.stringify(movieData);
+    setFavs([...favs, favMovieDataStringified]);
+    localStorage.setItem('movieData', favs);
   }
 
   return (
@@ -44,7 +42,7 @@ function Cards() {
                 <h3>{item.title}</h3>
                 <p>{item.overview}</p>
                 <button>More Info</button>
-                <button onClick={() => { addFav(item) }}>Fav!</button>
+                <button onClick={() => { addFav(item) }}>{favs}</button>
 
               </div>
             </li>

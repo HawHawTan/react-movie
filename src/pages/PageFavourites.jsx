@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FavContext } from '../context/favContext';
+import { FavContext } from '../App';
 
 function PageFavourites() {
 
