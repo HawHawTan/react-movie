@@ -9,15 +9,15 @@ function Cards({getMovie,movies}){
     const truncateString = (str) => {
       if (str.length <= 10) {
         return str;
-    }
-    const truncated = str.slice(0, 100).trim();
-    const lastSpaceIndex = truncated.lastIndexOf(' ');
+      }
+      const truncated = str.slice(0, 100).trim();
+      const lastSpaceIndex = truncated.lastIndexOf(' ');
 
-    if (lastSpaceIndex > 0) {
-        return truncated.slice(0, lastSpaceIndex) + '...';
+      if (lastSpaceIndex > 0) {
+          return truncated.slice(0, lastSpaceIndex) + '...';
+      }
+      return truncated + '...';  // In case there's no space
     }
-    return truncated + '...';  // In case there's no space
-  }
 
   return (
     <div> 
@@ -31,7 +31,7 @@ function Cards({getMovie,movies}){
             { movies && movies.map(item => {
                 return(
                     <li key={item.id} >
-                      <Link to={`/details/${item.id}`}><img src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} alt={item.title}/></Link>
+                      <Link to={`/details/${item.id}`}><img id="card-img" src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} alt={item.title}/></Link>
                       <div className="overlay">
                         <h3>{item.title}</h3>
                         <p>{truncateString(item.overview)}</p>
@@ -46,7 +46,5 @@ function Cards({getMovie,movies}){
         </ul>
     </div>
   );
-}{/* <div><img src={`https://image.tmdb.org/t/p/w342${movies[0].backdrop_path}`} alt="" /></div>
-            <div></div>
-            <div></div> */}
+}
 export default Cards
