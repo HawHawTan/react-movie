@@ -1,29 +1,88 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
+// function PageFavourites() {
+
+//     const storedFavs = JSON.parse(localStorage.getItem('favMovieData'));
+
+//     return (
+//         <section>
+//             <ul>
+//                 {storedFavs && storedFavs.map(item => {
+//                     return (
+//                         <li key={item.id + "fav"} >
+//                             <Link to={`./details/${item.id}`}><img src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} alt={item.title} /></Link>
+//                             <div className="overlay">
+//                                 <h3>{item.title}</h3>
+//                                 <p>{item.overview}</p>
+//                                 <button>More Info</button>
+//                                 <button onClick={() => { toggleFav(item) }}>Fav!</button>
+
+//                             </div>
+//                         </li>
+//                     )
+//                 })}
+//             </ul>
+//         </section>
+//     )
+// }
+
+// export default PageFavourites
+
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function PageFavourites() {
+    const [favorites, setFavorites] = useState([]);
 
-    const storedFavs = JSON.parse(localStorage.getItem('movieData'));
+    useEffect(() => {
+        const storedFavorites = JSON.parse(localStorage.getItem("favMovieData")) || [];
+        setFavorites(storedFavorites);
+    }, []);
+
+    const handleRemoveFromFavorites = (movieId) => {
+        const updatedFavorites = favorites.filter((movie) => movie.id !== movieId);
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favMovieData", JSON.stringify(updatedFavorites));
+        alert("Movie removed from favorites!");
+    };
 
     return (
-        <section>
-            <ul>
-                {storedFavs && storedFavs.map(item => {
-                    return (
-                        <li key={item.id + "fav"} >
-                            <Link to={`./details/${item.id}`}><img src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} alt={item.title} /></Link>
+        <div>
+            <h1>Your Favorites</h1>
+            {favorites.length === 0 ? (
+                <p>No favorites added yet.</p>
+            ) : (
+                <ul id="cards-ul">
+                    {favorites.map((item) => (
+                        <li key={item.id}>
+                            <Link to={`/details/${item.id}`}>
+                                <img
+                                    id="card-img"
+                                    src={`https://image.tmdb.org/t/p/w342${item.poster_path}`}
+                                    alt={item.title}
+                                />
+                            </Link>
                             <div className="overlay">
                                 <h3>{item.title}</h3>
                                 <p>{item.overview}</p>
-                                <button>More Info</button>
-                                <button onClick={() => { toggleFav(item) }}>Fav!</button>
-
+                                <div id="info">
+                                    <Link to={`/details/${item.id}`}>
+                                        <button>More Info</button>
+                                    </Link>
+                                    <img
+                                        id="heart"
+                                        src="./src/media/heart-hover.svg"
+                                        alt="heart"
+                                        onClick={() => handleRemoveFromFavorites(item.id)}
+                                        style={{ cursor: "pointer" }}
+                                    />
+                                </div>
                             </div>
                         </li>
-                    )
-                })}
-            </ul>
-        </section>
-    )
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
 }
-
-export default PageFavourites
+export default PageFavourites;

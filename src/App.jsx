@@ -7,7 +7,8 @@ export const FavContext = createContext();
 
 function App() {
   // context for favorites array state
-  const [favs, setFavs] = useState([]);
+  const initialFavs = JSON.parse(localStorage.getItem('favMovieData')) || [];
+  const [favs, setFavs] = useState(initialFavs);
 
   return (
     <>
