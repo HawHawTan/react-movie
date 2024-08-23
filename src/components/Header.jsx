@@ -8,8 +8,8 @@ function Header() {
 
     useEffect(() => {
         function handleResize() {
-            setIsSmallScreen(window.innerWidth <= 320);
-            if (window.innerWidth > 320) {
+            setIsSmallScreen(window.innerWidth <= 375);
+            if (window.innerWidth > 375) {
                 setIsHamburgerMenuOpen(false);
             }
         }
