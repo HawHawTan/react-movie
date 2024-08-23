@@ -82,7 +82,7 @@
     }
 
     .movie-info {
-        margin: 3.4rem 7.5rem 6.5rem;
+        margin: 1rem 7.5rem 6.5rem;
     }
 }
 
@@ -104,6 +104,10 @@
         flex-direction: column;
         margin: 0 auto;
         margin-top: -20rem;
+    }
+
+    .title-detail {
+        margin-top: -2rem;
     }
 
     .title-detail,
