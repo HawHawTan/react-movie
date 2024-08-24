@@ -30,7 +30,7 @@ footer {
     }
 }
 
-@media (width <= 20rem) {
+@media (width < 20rem) {
     footer {
         display: none;
     }
