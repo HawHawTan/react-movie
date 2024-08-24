@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -15,13 +15,13 @@ function Sliderr({ movies }) {
       return str;
     }
     const truncated = str.slice(0, 100).trim();
-    const lastSpaceIndex = truncated.lastIndexOf(' ');
+    const lastSpaceIndex = truncated.lastIndexOf(" ");
 
     if (lastSpaceIndex > 0) {
-        return truncated.slice(0, lastSpaceIndex) + '...';
+      return truncated.slice(0, lastSpaceIndex) + "...";
     }
-    return truncated + '...';  // In case there's no space
-  }
+    return truncated + "..."; // In case there's no space
+  };
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -30,14 +30,15 @@ function Sliderr({ movies }) {
     };
   }, []);
 
-
   const settings = {
     dots: false,
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: isMobile? 3 : 1,
     slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: isMobile? "0" : window.innerWidth > 1300 ?  '300px':"150px" ,
     autoplay: true,
   };
 
@@ -50,24 +51,32 @@ function Sliderr({ movies }) {
       <Slider {...settings}>
         {movies.map((movie) => (
           <div id="hero-wrapper" key={movie.id}>
-             <Link to={`/details/${movie.id}`}>
-              <img id="backdrop"  src={`https://image.tmdb.org/t/p/${
-            isMobile ? "w342" : "original"}${isMobile ? movie.poster_path : movie.backdrop_path}`}
-              alt={movie.title || "Movie"}/>
-             </Link>
-             <div id="hero-desktop">
-               <div id="hero-info">
-                  <h2>{movie.title}</h2>
-                  <p>{truncateString(movie.overview)}</p>
-                  <div id="slider-buttons">
-                  <Link to={`/details/${movie.id}`}><button>More Info</button></Link>
-                  <img id='heart' src="./src/media/heart-hover.svg" alt="heart" />
+            <Link to={`/details/${movie.id}`}>
+              <img
+                id="backdrop"
+                src={`https://image.tmdb.org/t/p/${
+                  isMobile ? "w342" : "original"
+                }${isMobile ? movie.poster_path : movie.backdrop_path}`}
+                alt={movie.title || "Movie"}
+              />
+            </Link>
+            <div id="hero-desktop">
+              <div id="hero-info">
+                <h2>{movie.title}</h2>
+                <p>{truncateString(movie.overview)}</p>
+                <div id="slider-buttons">
+                  <Link to={`/details/${movie.id}`}>
+                    <button>More Info</button>
+                  </Link>
+                  <img
+                    id="heart"
+                    src="./src/media/heart-hover.svg"
+                    alt="heart"
+                  />
                 </div>
               </div>
-             </div>
-             
+            </div>
           </div>
-
         ))}
       </Slider>
     </div>
