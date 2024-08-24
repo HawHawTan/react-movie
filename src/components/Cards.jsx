@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FavContext } from "../App";
-import { toggleFavs } from "../context/toggleFavs";
 
 function Cards({ getMovie, movies }) {
   const { toggleFavs } = useContext(FavContext);

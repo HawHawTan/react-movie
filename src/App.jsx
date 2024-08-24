@@ -7,9 +7,6 @@ import { toggleFavs } from './context/toggleFavs';
 export const FavContext = createContext();
 
 function App() {
-  // context for favorites array state
-  // const initialFavs = JSON.parse(localStorage.getItem('favMovieData')) || [];
-  // const [favs, setFavs] = useState(initialFavs);
 
   return (
     <>
