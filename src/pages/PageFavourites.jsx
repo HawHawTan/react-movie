@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { appTitle } from "../globals/globalVariables";
+
 
 function PageFavourites() {
     const [favorites, setFavorites] = useState([]);
+
+    useEffect(() => {
+        document.title = `Favorites | ${appTitle}`;
+    }, []);
 
     useEffect(() => {
         const storedFavorites = JSON.parse(localStorage.getItem("favMovieData")) || [];
@@ -13,14 +19,12 @@ function PageFavourites() {
         const updatedFavorites = favorites.filter((movie) => movie.id !== movieId);
         setFavorites(updatedFavorites);
         localStorage.setItem("favMovieData", JSON.stringify(updatedFavorites));
-        alert("Movie removed from favorites!");
     };
 
     return (
-        <div>
-            <h1>Your Favorites</h1>
+        <section className="favourites">
             {favorites.length === 0 ? (
-                <p>No favorites added yet.</p>
+                <p className="no-favs">No favorites added yet.</p>
             ) : (
                 <ul id="cards-ul">
                     {favorites.map((item) => (
@@ -40,7 +44,7 @@ function PageFavourites() {
                                         <button>More Info</button>
                                     </Link>
                                     <img
-                                        id="heart"
+                                        id="heart-filled"
                                         src="./src/media/heart-hover.svg"
                                         alt="heart"
                                         onClick={() => handleRemoveFromFavorites(item.id)}
@@ -52,7 +56,7 @@ function PageFavourites() {
                     ))}
                 </ul>
             )}
-        </div>
+        </section>
     );
 }
 export default PageFavourites;

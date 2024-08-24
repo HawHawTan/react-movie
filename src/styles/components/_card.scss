@@ -62,6 +62,10 @@
         opacity: 1;
     }
 }
+#heart-filled {
+    width: 10%;
+    opacity: 1;
+}
 
 @media (min-width:$tablet) {
     #movies-category-mobile{
@@ -93,6 +97,10 @@
 
     #heart{
         width: 8%;
+    }
+    #heart-filled {
+        width: 8%;
+        opacity: 1;
     }
    
 }
@@ -159,6 +167,10 @@
                             transition: $transiting;
                             opacity: 1;
                         }
+                    }
+                    #heart-filled {
+                        width: 17%;
+                        opacity: 1;
                     }
                 }
                 p,h3{

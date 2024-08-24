@@ -1,0 +1,36 @@
+@use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/typography" as *;
+
+
+.favorites {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+    height: 75vh;
+    max-width: 39rem;
+    padding: 1.5rem;
+    background-color: $black-color;
+
+    h2 {
+        font-size: 1.875rem;
+    }
+
+    p {
+        text-align: start;
+    }
+}
+
+@media (max-width: 20rem) {
+    .favorites {
+        font-size: 1.25rem;
+
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
+}

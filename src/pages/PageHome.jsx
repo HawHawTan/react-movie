@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 import Cards from "../components/Cards";
 import Mobile_category from "../components/Mobile_category";
 import Sliderr from "../components/Sliderr";
+import { appTitle } from "../globals/globalVariables";
+
 
 function PageHome() {
   const api = import.meta.env.VITE_API_KEY;
   const [movie, setMovie] = useState([]);
+
+  useEffect(() => {
+    document.title = appTitle;
+  }, []);
 
   const getMovie = (c) => {
     fetch(

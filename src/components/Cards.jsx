@@ -1,10 +1,17 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FavContext } from "../App";
 
 function Cards({ getMovie, movies }) {
   const { toggleFavs } = useContext(FavContext);
+  // const [favsDisplayCount, updateFavsDisplayCount] = useState(0);
+
+  // useEffect(() => {
+  //   updateFavsDisplayCount(favsDisplayCount + 1);
+  //   console.log(favsDisplayCount + 1);
+
+  // }, [toggleFavs]);
 
   const truncateString = (str) => {
     if (str.length <= 10) {
@@ -20,7 +27,7 @@ function Cards({ getMovie, movies }) {
   };
 
   const isMovieFavorited = (movieId) => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const favorites = JSON.parse(localStorage.getItem("favMovieData")) || [];
     return favorites.some((movie) => movie.id === movieId);
   };
 
@@ -37,6 +44,8 @@ function Cards({ getMovie, movies }) {
         {movies &&
           movies.map((item) => {
             const favorited = isMovieFavorited(item.id);
+            console.log(favorited);
+
             return (
               <li key={item.id}>
                 <Link to={`/details/${item.id}`}>
@@ -54,8 +63,8 @@ function Cards({ getMovie, movies }) {
                       <button>More Info</button>
                     </Link>
                     <img
-                      id="heart"
-                      src={`./src/media/${favorited ? 'heart-filled.svg' : 'heart-hover.svg'}`}
+                      id={favorited ? 'heart-filled' : 'heart'}
+                      src='./src/media/heart-hover.svg'
                       alt="heart"
                       onClick={() => toggleFavs(item)}
                       style={{ cursor: "pointer" }}
