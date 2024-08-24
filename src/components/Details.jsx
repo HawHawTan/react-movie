@@ -46,13 +46,17 @@ const Details = () => {
 
             <div className="movie-header">
                 {/* Display the movie's poster */}
+                <figure className='heart-poster-wrap'>
                 <img className='poster-movie' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                <img className='heart' src="/src/media/heart-hover.svg" alt="heart" />
+                <p className='rating-detail'>
+                    <span className='rating-value'>{formatRating(movie.vote_average)}</span>
+                </p>
+                </figure>
                 
                 {/* Movie information */}
                 <div className="movie-info">
-                    <p className='rating-detail'>
-                        <span className='rating-value'>{formatRating(movie.vote_average)}</span>
-                    </p>
+
                     <div className='text-detail-wrap'>
                     <h1 className='title-detail'>{movie.title}</h1>
                     <p className='date-detail'>{formatDateWithOrdinal(movie.release_date)}</p>
