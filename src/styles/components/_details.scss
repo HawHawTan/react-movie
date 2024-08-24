@@ -7,14 +7,30 @@
     margin-top: -1rem;
 }
 
+.heart-poster-wrap {
+    position: relative;
+}
+
 .poster-movie {
     width: 18.125rem;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     border-radius: 1.25rem;
 }
+
+.heart {
+    width: 3rem;
+    height: auto;
+    position: absolute;
+    bottom: .5rem;
+    left: 65%;
+    z-index: 10;
+}
+
+
 
 .title-detail {
     color: white;
@@ -50,6 +66,7 @@
     margin: 1rem auto;
 }
 
+
 .rating-value {
     display: flex;
     align-items: center;
@@ -58,6 +75,19 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+@media (min-width: $tablet) {
+    .heart {
+        left: 60%;
+}
+}
+
+@media (min-width: $desktop) {
+    .heart {
+        left: 55%;
+}
+}
+
 
 @media (min-width: $desktop) {
     .backdrop-movie {
@@ -87,7 +117,7 @@
 }
 
 
-@media (min-width: $desktop-larger) {
+@media (min-width: 120em) {
     .poster-movie {
         margin-top: -15rem;
         margin-left: 14rem;
@@ -95,7 +125,16 @@
     }
 
     .rating-detail {
-        margin-left: 10rem;
+        margin-left: 19rem;
+    }
+
+    .heart {
+        width: 3rem;
+        height: auto;
+        position: absolute;
+        bottom: .5rem;
+        left: 22%;
+        z-index: 10;
     }
 
     .text-detail-wrap {
@@ -114,4 +153,9 @@
     .date-detail {
         text-align: start;
     }
+}
+
+.favourite-rating-wrap {
+    display: flex;
+    flex-direction: row;
 }
