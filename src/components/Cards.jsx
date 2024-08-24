@@ -19,6 +19,11 @@ function Cards({ getMovie, movies }) {
     return truncated + "...";
   };
 
+  const isMovieFavorited = (movieId) => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    return favorites.some((movie) => movie.id === movieId);
+  };
+
 
   return (
     <div>
