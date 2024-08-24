@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FavContext } from "../App";
 
 function Cards({ getMovie, movies }) {
-  const { toggleFavs } = useContext(FavContext);
+  const { toggleFavs, isMovieFavorited } = useContext(FavContext);
   // const [favsDisplayCount, updateFavsDisplayCount] = useState(0);
 
   // useEffect(() => {
@@ -26,11 +26,6 @@ function Cards({ getMovie, movies }) {
     return truncated + "...";
   };
 
-  const isMovieFavorited = (movieId) => {
-    const favorites = JSON.parse(localStorage.getItem("favMovieData")) || [];
-    return favorites.some((movie) => movie.id === movieId);
-  };
-
 
   return (
     <div>
@@ -44,7 +39,6 @@ function Cards({ getMovie, movies }) {
         {movies &&
           movies.map((item) => {
             const favorited = isMovieFavorited(item.id);
-            console.log(favorited);
 
             return (
               <li key={item.id}>
