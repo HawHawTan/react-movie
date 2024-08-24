@@ -6,7 +6,7 @@ function Cards() {
   const api = import.meta.env.VITE_API_KEY;
   const [movie, setMovie] = useState(null);
   const [category, setCategory] = useState('now_playing');
-  const { favs, setFavs } = useContext(FavContext);
+  const { toggleFavs } = useContext(FavContext);
 
   const getMovie = (c) => {
     fetch(`https://api.themoviedb.org/3/movie/${c}?language=en-US&page=1&api_key=${api}`)
@@ -17,28 +17,6 @@ function Cards() {
   useEffect(() => {
     getMovie('now_playing');
   }, [])
-
-  const [currFavorites, setCurrFavorites] = useState([]);
-
-  useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favMovieData")) || [];
-    setCurrFavorites(storedFavorites);
-  }, []);
-
-  const toggleFavs = (movie) => {
-    let favorites = JSON.parse(localStorage.getItem("favMovieData")) || [];
-    const isFavorite = favorites.find((fav) => fav.id === movie.id);
-    if (!isFavorite) {
-      favorites.push(movie);
-      localStorage.setItem("favMovieData", JSON.stringify(favorites));
-    } else {
-      // remove movie if already in faourites (toggle)
-      // looks through array of fav movies, returns all movie that don't match movie passed in to function
-      const updatedFavorites = favorites.filter((favMovie) => favMovie.id !== movie.id);
-      setCurrFavorites(updatedFavorites);
-      localStorage.setItem("favMovieData", JSON.stringify(updatedFavorites));
-    }
-  };
 
   return (
     <div>
