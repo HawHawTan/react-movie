@@ -206,15 +206,15 @@
             li{
                 .overlay{
                     height: 95%;
+                    opacity: 1;
                     #info{
-                        margin: 1rem;
                         button{
                             padding: 1rem;
                         }
                     }
                     h3{
-                        top:4rem;
-                        font-size: 1.3rem;
+                        top: 2rem;
+                        font-size: 1.2rem;
                     }
                     p{
                         font-size: 1rem;
