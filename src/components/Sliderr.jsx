@@ -13,6 +13,22 @@ function Sliderr({ movies }) {
     setIsMobile(window.innerWidth < 768);
   };
 
+  function formatDateWithOrdinal(dateString) {
+    const date = new Date(dateString);
+
+    const day = date.getDate();
+    const month = date.toLocaleString('en-US', { month: 'long' });
+    const year = date.getFullYear();
+
+    function getOrdinalSuffix(n) {
+        const s = ["th", "st", "nd", "rd"];
+        const v = n % 100;
+        return s[(v - 20) % 10] || s[v] || s[0];
+    }
+
+    return `${month} ${day}${getOrdinalSuffix(day)}, ${year}`;
+}
+
   const truncateString = (str) => {
     if (str.length <= 10) {
       return str;
@@ -42,7 +58,7 @@ function Sliderr({ movies }) {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: isMobile? "0" : (window.innerWidth > 1300 ?  (window.innerWidth > 1600 ? '340px ':'200px') :"150px"), 
-    autoplay: true,
+    // autoplay: true,
   };
 
   if (!movies || movies.length === 0) {
@@ -52,33 +68,33 @@ function Sliderr({ movies }) {
   return (
     <div>
       <Slider {...settings}>
-        {movies.map((movie) => {
-          const favorited = isMovieFavorited(movie.id);
-
+        {movies.map((item) => {
+          const favorited = isMovieFavorited(item.id);
           return (
-            <div id="hero-wrapper" key={movie.id}>
-              <Link to={`/details/${movie.id}`}>
+            <div id="hero-wrapper" key={item.id}>
+              <Link to={`/details/${item.id}`}>
                 <img
                   id="backdrop"
                   src={`https://image.tmdb.org/t/p/${isMobile ? "w342" : "original"
-                    }${isMobile ? movie.poster_path : movie.backdrop_path}`}
-                  alt={movie.title || "Movie"}
+                    }${isMobile ? item.poster_path : item.backdrop_path}`}
+                  alt={item.title || "Movie"}
                 />
               </Link>
               <div id="hero-desktop">
                 <div id="hero-info">
-                  <h2>{movie.title}</h2>
-                  <p>{truncateString(movie.overview)}</p>
+                  <h2>{item.title}</h2>
+                  <p id="release-date">{formatDateWithOrdinal(item.release_date)}</p>
+                  <p>{truncateString(item.overview)}</p>
                   <div id="slider-buttons">
-                    <Link to={`/details/${movie.id}`}>
+                    <Link to={`/details/${item.id}`}>
                       <button>More Info</button>
                     </Link>
                     <img
                       id={favorited ? 'heart-filled' : 'heart'}
-                      src='./src/media/heart-hover.svg'
+                      src={`./src/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
                       alt="heart"
                       onClick={() => {
-                        toggleFavs(movie)
+                        toggleFavs(item)
                         setFavStatus(!favStatus)
                       }}
                       style={{ cursor: "pointer" }}

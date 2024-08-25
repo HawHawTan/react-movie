@@ -148,9 +148,10 @@
                 background-color: rgba(0, 0, 0, 0.78); 
                 color: $white-color;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                opacity: 0;
+                opacity: 1;
                 transition: $transiting; 
                 text-align: center;
                 border-radius: 1.25rem;
@@ -159,7 +160,7 @@
                     bottom: 0;
                     left: 0;
                     width: 100%;
-                    margin-bottom: 0.5rem;
+                    margin-bottom: 1rem;
                     button{
                         font-size: 0.8rem;
                         left: 1rem;
@@ -182,6 +183,9 @@
                 }
                 p,h3{
                     display: block;
+                }
+                #release-date{
+                    margin: 1.2rem 0;
                 }
                 p{
                     margin-top: 1rem;
