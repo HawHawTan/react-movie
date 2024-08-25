@@ -10,7 +10,7 @@ function Cards({ getMovie, movies }) {
     if (str.length <= 10) {
       return str;
     }
-    const truncated = str.slice(0, 100).trim();
+    const truncated = str.slice(0, 50).trim();
     const lastSpaceIndex = truncated.lastIndexOf(" ");
 
     if (lastSpaceIndex > 0) {
@@ -18,7 +18,6 @@ function Cards({ getMovie, movies }) {
     }
     return truncated + "...";
   };
-
 
   return (
     <div>
@@ -31,8 +30,6 @@ function Cards({ getMovie, movies }) {
       <ul id="cards-ul">
         {movies &&
           movies.map((item) => {
-            const favourited = isMovieFavorited(item.id);
-
             return (
               <li key={item.id}>
                 <Link to={`/details/${item.id}`}>
@@ -50,8 +47,8 @@ function Cards({ getMovie, movies }) {
                       <button>More Info</button>
                     </Link>
                     <img
-                      id={favourited ? 'heart-filled' : 'heart'}
-                      src='./src/media/heart-hover.svg'
+                      id="heart"
+                      src={`./src/media/heart-hover.svg`}
                       alt="heart"
                       onClick={() => {
                         toggleFavs(item)
