@@ -29,10 +29,6 @@
     z-index: 10;
     opacity: 0.3;
     transition: $transiting;
-    &:hover{
-        transition: $transiting;
-        opacity: 1;
-    }
 }
 .heart-filled {
     width: 3rem;
@@ -94,6 +90,10 @@
     }
     .heart-filled {
         left: 60%;
+        &:hover{
+            transition: $transiting;
+            opacity: 1;
+        }
     }
 }
 
@@ -103,6 +103,10 @@
     }
     .heart-filled {
         left: 55%;
+        &:hover{
+            transition: $transiting;
+            opacity: 1;
+        }
     }
 }
 
@@ -161,6 +165,10 @@
         bottom: .5rem;
         left: 22%;
         z-index: 10;
+            &:hover{
+                transition: $transiting;
+                opacity: 1;
+            }
     }
 
     .text-detail-wrap {

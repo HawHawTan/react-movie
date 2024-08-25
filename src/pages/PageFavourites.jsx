@@ -21,6 +21,20 @@ function PageFavourites() {
         localStorage.setItem("favMovieData", JSON.stringify(updatedFavorites));
     };
 
+    const truncateString = (str) => {
+        if (str.length <= 10) {
+            return str;
+        }
+        const truncated = str.slice(0, 100).trim();
+        const lastSpaceIndex = truncated.lastIndexOf(" ");
+
+        if (lastSpaceIndex > 0) {
+            return truncated.slice(0, lastSpaceIndex) + "...";
+        }
+        return truncated + "...";
+    };
+
+
     return (
         <section>
             {favorites.length === 0 ? (
@@ -41,7 +55,7 @@ function PageFavourites() {
                                 </Link>
                                 <div className="overlay">
                                     <h3>{item.title}</h3>
-                                    <p>{item.overview}</p>
+                                    <p>{truncateString(item.overview)}</p>
                                     <div id="info">
                                         <Link to={`/details/${item.id}`}>
                                             <button>More Info</button>

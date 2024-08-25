@@ -55,7 +55,7 @@ const Details = () => {
                     <img className='poster-movie' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                     <img
                         className={favorited ? 'heart-filled' : 'heart'}
-                        src="/src/media/heart-hover.svg"
+                        src={`/src/media/${favorited ? "heart-hover.svg" : "heart.svg"}`}
                         alt="heart"
                         onClick={() => {
                             toggleFavs(movie)
