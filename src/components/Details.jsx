@@ -5,7 +5,8 @@ const API = import.meta.env.VITE_API_KEY;
 
 const Details = () => {
     const [movie, setMovie] = useState(null);
-    const { toggleFavs, isMovieFavorited } = useContext(FavContext);
+    const { toggleFavs, isMovieFavorited, favStatus, setFavStatus } = useContext(FavContext);
+
     const { id } = useParams();
 
     useEffect(() => {
@@ -56,7 +57,10 @@ const Details = () => {
                         className={favorited ? 'heart-filled' : 'heart'}
                         src="/src/media/heart-hover.svg"
                         alt="heart"
-                        onClick={() => toggleFavs(movie)}
+                        onClick={() => {
+                            toggleFavs(movie)
+                            setFavStatus(!favStatus)
+                        }}
                         style={{ cursor: "pointer" }}
                     />
                     <p className='rating-detail'>
