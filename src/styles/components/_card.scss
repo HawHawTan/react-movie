@@ -1,4 +1,5 @@
 @use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
 
 #movies-category-desktop{
     display: none;
@@ -14,6 +15,8 @@
     bottom: 0;
     width: 100%; 
     button{
+        @include body-font;
+        text-transform: uppercase;
         display: flex;
         margin-left: 0.5rem;
         flex-direction: column;
@@ -25,31 +28,34 @@
 }
 
 #cards-ul{
+    @include body-font;
     display: flex;
     flex-direction: column;
     align-items: center;
     li{
         position: relative;
+        margin-bottom: 3rem;
         #card-img{
             margin: 0 2rem;
             width: 80%;
+            border-radius: 1.25rem;
         }
         h3,p{
             display: none
         };
         button{
-            padding: 0.5rem 1rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            padding: 0.4rem 1.2rem;
+            margin-right: 1rem;
             border-radius: 0.5rem;
-            background-color: white;
+            background-color: $white-color;
         }
         #info{
             margin: 1rem 0;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
         }
-        // .overlay {
-        //     display: none;
-        // }
     }
 }
 
@@ -57,10 +63,6 @@
     width: 10%;
     opacity: 0.3;
     transition: $transiting;
-    &:hover{
-        transition: $transiting;
-        opacity: 1;
-    }
 }
 #heart-filled {
     width: 10%;
@@ -75,11 +77,11 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
-       
+        
     }
     #movies-category-desktop{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         padding: 0.5rem 0;
         background-color: #0D0D0D;
         width: 80%;
@@ -87,22 +89,25 @@
         border-radius: 2rem;
     
         button{
+            @include body-font;
+            text-transform: uppercase;
+            font-size: 1rem;
             border: 4px $red-color solid;
             padding: 0.5rem 1.5rem;
             border-radius: 2rem;
-            color: white;
+            color: $white-color;
             transition: $transiting; 
         }
     }
 
     #heart{
-        width: 8%;
+        width: 10%;
     }
     #heart-filled {
-        width: 8%;
+        width: 10%;
         opacity: 1;
     }
-   
+
 }
 
 @media (min-width:$desktop) {
@@ -120,28 +125,28 @@
     #cards-ul {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        margin:0  1rem;
-        gap: 1rem;
-    
+        gap: 2rem 1rem;
+        padding: 2rem;
+
         li {
             position: relative; 
-            overflow: hidden;
             transition: $transiting; 
             #card-img {
                 width: 100%;
                 height: 100%;
-                margin: 1rem
+                margin: 0;
             }
             #info{
                 margin: 0;
             }
             .overlay {
                 position: absolute;
-                top: 1rem;
-                left: 1rem;
-                height: 90%;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
                 background-color: rgba(0, 0, 0, 0.78); 
-                color: white;
+                color: $white-color;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -149,6 +154,7 @@
                 opacity: 1;
                 transition: $transiting; 
                 text-align: center;
+                border-radius: 1.25rem;
                 #info{
                     position: absolute;
                     bottom: 0;
@@ -156,9 +162,10 @@
                     width: 100%;
                     margin-bottom: 1rem;
                     button{
+                        font-size: 0.8rem;
                         left: 1rem;
-                        border-radius: 0.5rem;
-                        background-color: white;
+                        border-radius: 0.6rem;
+                        background-color: $white-color;
                     }
                     #heart{
                         width: 17%;
@@ -209,12 +216,8 @@
         #cards-ul {
             li{
                 .overlay{
-                    height: 95%;
-                    #info{
-                        button{
-                            padding: 1rem;
-                        }
-                    }
+                    opacity: 0;
+
                     h3{
                         top: 2rem;
                         font-size: 1.2rem;
@@ -222,6 +225,9 @@
                     p{
                         font-size: 1rem;
                     }
+                }
+                &:hover .overlay {
+                    opacity: 1;
                 }
             }
         }
