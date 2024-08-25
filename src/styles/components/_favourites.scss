@@ -1,0 +1,52 @@
+@use "../utilities/vars" as *;
+
+
+.no-favourites {
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 75vh;
+    padding: 1rem;
+    background-color: $black-color;
+    text-transform: uppercase;
+
+    .no-favs-heart {
+        width: 1.5rem;
+        margin: 0 0.6rem;
+    }
+}
+
+.favourites {
+    padding: 3rem;
+    min-height: 75vh;
+    
+}
+
+
+@media (min-width:$tablet) {
+    .no-favourites {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    
+        .no-favs-heart {
+            width: 2rem;
+            margin: 0 1rem;
+        }
+    }
+}
+
+
+@media (min-width:$desktop) {
+    .no-favourites {
+        font-size: 2.5rem;
+        padding: 3rem;
+    
+        .no-favs-heart {
+            width: 4rem;
+            margin: 0 2rem;
+        }
+    }
+}

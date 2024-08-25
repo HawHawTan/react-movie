@@ -28,9 +28,22 @@
     bottom: .5rem;
     left: 65%;
     z-index: 10;
+    opacity: 0.3;
+    transition: $transiting;
+    &:hover{
+        transition: $transiting;
+        opacity: 1;
+    }
 }
-
-
+.heart-filled {
+    width: 3rem;
+    height: auto;
+    position: absolute;
+    bottom: .5rem;
+    left: 65%;
+    z-index: 10;
+    opacity: 1;
+}
 
 .title-detail {
     color: white;
@@ -79,13 +92,19 @@
 @media (min-width: $tablet) {
     .heart {
         left: 60%;
-}
+    }
+    .heart-filled {
+        left: 60%;
+    }
 }
 
 @media (min-width: $desktop) {
     .heart {
         left: 55%;
-}
+    }
+    .heart-filled {
+        left: 55%;
+    }
 }
 
 
@@ -129,6 +148,14 @@
     }
 
     .heart {
+        width: 3rem;
+        height: auto;
+        position: absolute;
+        bottom: .5rem;
+        left: 22%;
+        z-index: 10;
+    }
+    .heart-filled {
         width: 3rem;
         height: auto;
         position: absolute;

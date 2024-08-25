@@ -1,7 +1,11 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FavContext } from "../App";
 
 function Cards({ getMovie, movies }) {
+  const { toggleFavs, isMovieFavorited, favStatus, setFavStatus } = useContext(FavContext);
+
   const truncateString = (str) => {
     if (str.length <= 10) {
       return str;
@@ -15,27 +19,6 @@ function Cards({ getMovie, movies }) {
     return truncated + "...";
   };
 
-  const isMovieFavorited = (movieId) => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    return favorites.some((movie) => movie.id === movieId);
-  };
-
-  const handleToggleFavorite = (movie) => {
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const isFavorite = favorites.find((fav) => fav.id === movie.id);
-
-    if (isFavorite) {
-      // If the movie is already a favorite, remove it
-      favorites = favorites.filter((fav) => fav.id !== movie.id);
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-      alert(`${movie.title} has been removed from your favorites.`);
-    } else {
-      // If the movie is not a favorite, add it
-      favorites.push(movie);
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-      alert(`${movie.title} has been added to your favorites!`);
-    }
-  };
 
   return (
     <div>
@@ -48,7 +31,8 @@ function Cards({ getMovie, movies }) {
       <ul id="cards-ul">
         {movies &&
           movies.map((item) => {
-            const favorited = isMovieFavorited(item.id);
+            const favourited = isMovieFavorited(item.id);
+
             return (
               <li key={item.id}>
                 <Link to={`/details/${item.id}`}>
@@ -66,10 +50,13 @@ function Cards({ getMovie, movies }) {
                       <button>More Info</button>
                     </Link>
                     <img
-                      id="heart"
-                      src={`./src/media/${favorited ? 'heart-filled.svg' : 'heart-hover.svg'}`}
+                      id={favourited ? 'heart-filled' : 'heart'}
+                      src='./src/media/heart-hover.svg'
                       alt="heart"
-                      onClick={() => handleToggleFavorite(item)}
+                      onClick={() => {
+                        toggleFavs(item)
+                        setFavStatus(!favStatus)
+                      }}
                       style={{ cursor: "pointer" }}
                     />
                   </div>
