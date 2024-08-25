@@ -143,6 +143,7 @@
                 background-color: rgba(0, 0, 0, 0.78); 
                 color: white;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 opacity: 0;
@@ -176,6 +177,9 @@
                 p,h3{
                     display: block;
                 }
+                #release-date{
+                    margin: 1.2rem 0;
+                }
                 p{
                     margin-top: 1rem;
                     width:90%;
@@ -206,7 +210,6 @@
             li{
                 .overlay{
                     height: 95%;
-                    opacity: 1;
                     #info{
                         button{
                             padding: 1rem;

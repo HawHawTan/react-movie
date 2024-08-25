@@ -19,6 +19,22 @@ function Cards({ getMovie, movies }) {
     return truncated + "...";
   };
 
+  function formatDateWithOrdinal(dateString) {
+    const date = new Date(dateString);
+
+    const day = date.getDate();
+    const month = date.toLocaleString('en-US', { month: 'long' });
+    const year = date.getFullYear();
+
+    function getOrdinalSuffix(n) {
+        const s = ["th", "st", "nd", "rd"];
+        const v = n % 100;
+        return s[(v - 20) % 10] || s[v] || s[0];
+    }
+
+    return `${month} ${day}${getOrdinalSuffix(day)}, ${year}`;
+}
+
   return (
     <div>
       <div id="movies-category-desktop">
@@ -30,7 +46,9 @@ function Cards({ getMovie, movies }) {
       <ul id="cards-ul">
         {movies &&
           movies.map((item) => {
+            const favorited = isMovieFavorited(item.id);
             return (
+            // showing the poster of each movie
               <li key={item.id}>
                 <Link to={`/details/${item.id}`}>
                   <img
@@ -39,16 +57,18 @@ function Cards({ getMovie, movies }) {
                     alt={item.title}
                   />
                 </Link>
+                {/* this only shows when you hover on the cards */}
                 <div className="overlay">
                   <h3>{item.title}</h3>
+                  <p id="release-date">{formatDateWithOrdinal(item.release_date)}</p>
                   <p>{truncateString(item.overview)}</p>
                   <div id="info">
                     <Link to={`/details/${item.id}`}>
                       <button>More Info</button>
                     </Link>
                     <img
-                      id="heart"
-                      src={`./src/media/heart-hover.svg`}
+                      id={favorited ? 'heart-filled' : 'heart'}
+                      src={`./src/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
                       alt="heart"
                       onClick={() => {
                         toggleFavs(item)
