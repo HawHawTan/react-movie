@@ -18,6 +18,9 @@
     max-width: 40rem;
     padding: 1.5rem;
 
+    flex: 1 0 auto; /* content takes up remaining space */
+    overflow-y: auto; 
+
     h2 {
         font-size: 1.875rem;
     }
@@ -52,5 +55,4 @@
     align-items: center;
     margin-top: 1rem;
 }
-
 
