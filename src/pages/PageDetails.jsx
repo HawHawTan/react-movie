@@ -76,4 +76,4 @@ const PageDetails = () => {
     );
 };
 
-export default Details;
+export default PageDetails;
