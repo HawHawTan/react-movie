@@ -27,13 +27,13 @@ function Cards({ getMovie, movies }) {
     const year = date.getFullYear();
 
     function getOrdinalSuffix(n) {
-        const s = ["th", "st", "nd", "rd"];
-        const v = n % 100;
-        return s[(v - 20) % 10] || s[v] || s[0];
+      const s = ["th", "st", "nd", "rd"];
+      const v = n % 100;
+      return s[(v - 20) % 10] || s[v] || s[0];
     }
 
     return `${month} ${day}${getOrdinalSuffix(day)}, ${year}`;
-}
+  }
 
   return (
     <div>
@@ -48,7 +48,7 @@ function Cards({ getMovie, movies }) {
           movies.map((item) => {
             const favorited = isMovieFavorited(item.id);
             return (
-            // showing the poster of each movie
+              // showing the poster of each movie
               <li key={item.id}>
                 <Link to={`/details/${item.id}`}>
                   <img
