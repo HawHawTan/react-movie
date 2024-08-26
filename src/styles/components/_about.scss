@@ -15,7 +15,7 @@
     flex-direction: column;
     text-align: center;
     height: 75vh;
-    max-width: 39rem;
+    max-width: 40rem;
     padding: 1.5rem;
 
     h2 {
@@ -37,5 +37,20 @@
     }
 }
 
+.tmdb-attr {
+    align-items: center;
+}
+
+.tmdb-para {
+    font-weight:lighter;
+    font-size: 1.1rem;
+    margin-top: 3.5rem;
+}
+
+.tmdb-logo {
+    max-width: 3.5rem;
+    align-items: center;
+    margin-top: 1rem;
+}
 
 
