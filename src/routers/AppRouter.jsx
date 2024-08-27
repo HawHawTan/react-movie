@@ -11,7 +11,7 @@ import { APP_FOLDER_NAME } from '../globals/globalVariables';
 
 function AppRouter() {
     return (
-        <BrowserRouter basename={`/curtain-drop`}>
+        <BrowserRouter basename='/curtain-drop'>
             <div className="wrapper">
                 <Header />
                 <Routes>
