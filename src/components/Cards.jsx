@@ -35,6 +35,11 @@ function Cards({ getMovie, movies }) {
     return `${month} ${day}${getOrdinalSuffix(day)}, ${year}`;
   }
 
+  function formatRating(rating) {
+    return `${(rating * 10).toFixed(0)}`;
+  }
+
+
   return (
     <div>
       <div id="movies-category-desktop">
