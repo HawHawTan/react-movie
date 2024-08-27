@@ -146,7 +146,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                opacity: 1;
+                opacity: 0;
                 transition: $transiting; 
                 text-align: center;
                 border-radius: 1.25rem;
@@ -155,7 +155,6 @@
                     bottom: 1rem;
                     left: 0;
                     width: 100%;
-                    margin-bottom: 1rem;
                     button{
                         font-size: 0.8rem;
                         left: 1rem;
@@ -212,6 +211,7 @@
         #cards-ul {
             li{
                 .overlay{
+                    opacity: 1;
                     h3{
                         top: 2rem;
                         font-size: 1.2rem;
@@ -220,6 +220,7 @@
                         font-size: 1rem;
                     }
                     #info{
+                        margin-bottom: 1rem;
                         #heart,#heart-filled{
                             width: 38px;
                         }
