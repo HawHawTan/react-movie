@@ -7,9 +7,10 @@ import PageAbout from '../pages/PageAbout';
 import PageFavourites from '../pages/PageFavourites';
 import PageDetails from '../pages/PageDetails';
 import PageNotFound from '../pages/PageNotFound';
+import { APP_FOLDER_NAME } from '../globals/globalVariables';
 function AppRouter() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={`/${APP_FOLDER_NAME}`}>
             <div className="wrapper">
                 <Header />
                 <Routes>
@@ -25,3 +26,4 @@ function AppRouter() {
     )
 }
 export default AppRouter
+
