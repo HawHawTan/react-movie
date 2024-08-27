@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../components/Cards";
-import Mobile_category from "../components/Mobile_category";
+import MobileCategory from "../components/MobileCategory";
 import Sliderr from "../components/Sliderr";
 import { appTitle } from "../globals/globalVariables";
 
@@ -30,7 +30,7 @@ function PageHome() {
     <main>
       <Sliderr movies={movie} />
       <Cards getMovie={getMovie} movies={movie} />
-      <Mobile_category getMovie={getMovie} />
+      <MobileCategory getMovie={getMovie} />
     </main>
   );
 }
