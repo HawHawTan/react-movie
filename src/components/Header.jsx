@@ -25,7 +25,7 @@ function Header() {
     return (
         <header>
             <Link to="/"> {/* Use Link to navigate to the home page */}
-                <img className='logo-svg' src="/src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
+                <img className='logo-svg' src="/curtain-drop/src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
             </Link>
 
             {isSmallScreen && (
