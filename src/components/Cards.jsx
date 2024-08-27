@@ -68,7 +68,7 @@ function Cards({ getMovie, movies }) {
                     </Link>
                     <img
                       id={favorited ? 'heart-filled' : 'heart'}
-                      src={`/curtain-drop/src/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
+                      src={`/curtain-drop/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
                       alt="heart"
                       onClick={() => {
                         toggleFavs(item)

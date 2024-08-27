@@ -25,14 +25,14 @@ function Header() {
     return (
         <header>
             <Link to="/"> {/* Use Link to navigate to the home page */}
-                <img className='logo-svg' src="/curtain-drop/src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
+                <img className='logo-svg' src="/curtain-drop/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
             </Link>
 
             {isSmallScreen && (
                 <img
                     onClick={toggleHamburgerMenu}
                     className={isHamburgerMenuOpen ? 'hamburger-menu-svg menu-open' : 'hamburger-menu-svg'}
-                    src="/curtain-drop/src/media/hamburger-menu.svg"
+                    src="/curtain-drop/media/hamburger-menu.svg"
                     alt="Curtain Drop Logo"
                 />
             )}

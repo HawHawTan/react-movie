@@ -4,7 +4,7 @@ const Footer = ({ copyright = getYear() }) => (
     <footer>
         <p>&copy; {copyright} Kaleb/Haw Tan/Gustavo</p>
         <figure>
-            <img src="../curtain-drop/src/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
+            <img src="../curtain-drop/media/logo-curtaindrop.svg" alt="Curtain Drop Logo" />
         </figure>
         <p>For education purposes only.</p>
     </footer>

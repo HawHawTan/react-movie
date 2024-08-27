@@ -39,7 +39,7 @@ function PageFavourites() {
         <section>
             {favorites.length === 0 ? (
                 <div className="no-favourites">
-                    <p>looks like you don't have any favourited movies yet! <br />click the <img className="no-favs-heart" src="./src/media/heart-hover.svg" alt="heart-btn" /> button to add a movie to your favourites</p>
+                    <p>looks like you don't have any favourited movies yet! <br />click the <img className="no-favs-heart" src="/curtain-drop/media/heart-hover.svg" alt="heart-btn" /> button to add a movie to your favourites</p>
                 </div>
             ) : (
                 <div className="favourites">
@@ -62,7 +62,7 @@ function PageFavourites() {
                                         </Link>
                                         <img
                                             id="heart-filled"
-                                            src="/curtain-drop/src/media/heart-hover.svg"
+                                            src="/curtain-drop/media/heart-hover.svg"
                                             alt="heart"
                                             onClick={() => handleRemoveFromFavorites(item.id)}
                                             style={{ cursor: "pointer" }}
