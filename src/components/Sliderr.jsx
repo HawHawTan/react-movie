@@ -21,13 +21,13 @@ function Sliderr({ movies }) {
     const year = date.getFullYear();
 
     function getOrdinalSuffix(n) {
-        const s = ["th", "st", "nd", "rd"];
-        const v = n % 100;
-        return s[(v - 20) % 10] || s[v] || s[0];
+      const s = ["th", "st", "nd", "rd"];
+      const v = n % 100;
+      return s[(v - 20) % 10] || s[v] || s[0];
     }
 
     return `${month} ${day}${getOrdinalSuffix(day)}, ${year}`;
-}
+  }
 
   const truncateString = (str) => {
     if (str.length <= 10) {
@@ -57,7 +57,7 @@ function Sliderr({ movies }) {
     slidesToShow: isMobile ? 3 : 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: isMobile? "0" : (window.innerWidth > 1300 ?  (window.innerWidth > 1600 ? '340px ':'200px') :"150px"), 
+    centerPadding: isMobile ? "0" : (window.innerWidth > 1300 ? (window.innerWidth > 1600 ? '340px ' : '200px') : "150px"),
     // autoplay: true,
   };
 
@@ -90,8 +90,8 @@ function Sliderr({ movies }) {
                       <button>More Info</button>
                     </Link>
                     <img
-                      id={favorited ? 'heart-filled' : 'heart'}
-                      src={`./src/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
+                      id={favorited ? 'silder-heart-filled' : 'silder-heart'}
+                      src={`/curtain-drop/src/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
                       alt="heart"
                       onClick={() => {
                         toggleFavs(item)
