@@ -91,7 +91,7 @@ function Sliderr({ movies }) {
                     </Link>
                     <img
                       id={favorited ? 'silder-heart-filled' : 'silder-heart'}
-                      src={`/curtain-drop/src/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
+                      src={`/curtain-drop/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
                       alt="heart"
                       onClick={() => {
                         toggleFavs(item)
