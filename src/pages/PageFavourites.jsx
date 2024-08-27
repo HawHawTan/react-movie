@@ -62,7 +62,7 @@ function PageFavourites() {
                                         </Link>
                                         <img
                                             id="heart-filled"
-                                            src="./src/media/heart-hover.svg"
+                                            src="/curtain-drop/src/media/heart-hover.svg"
                                             alt="heart"
                                             onClick={() => handleRemoveFromFavorites(item.id)}
                                             style={{ cursor: "pointer" }}

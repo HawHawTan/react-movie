@@ -32,7 +32,7 @@ function Header() {
                 <img
                     onClick={toggleHamburgerMenu}
                     className={isHamburgerMenuOpen ? 'hamburger-menu-svg menu-open' : 'hamburger-menu-svg'}
-                    src="/src/media/hamburger-menu.svg"
+                    src="/curtain-drop/src/media/hamburger-menu.svg"
                     alt="Curtain Drop Logo"
                 />
             )}
