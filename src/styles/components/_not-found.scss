@@ -1,0 +1,40 @@
+@use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
+@use "../utilities/typography" as *;
+
+.about-bg {
+    background-color: $black-color;
+}
+
+.not-found-wrapper {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    max-width: 40rem;
+    padding: 1.5rem;
+}
+
+
+    p {
+        text-align: start;
+        font-size: 1.5rem;
+    }
+
+.not-found-p {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.not-found-p2 {
+    margin-top: 3rem;
+}
+
+.logo-svg-not-found {
+    margin-top: 5rem;
+    width: 10rem;
+}
