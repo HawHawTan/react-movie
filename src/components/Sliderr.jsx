@@ -90,7 +90,7 @@ function Sliderr({ movies }) {
                       <button>More Info</button>
                     </Link>
                     <img
-                      id={favorited ? 'heart-filled' : 'heart'}
+                      id={favorited ? 'silder-heart-filled' : 'silder-heart'}
                       src={`./src/media/${favorited ? 'heart-hover.svg' : 'heart.svg'}`}
                       alt="heart"
                       onClick={() => {

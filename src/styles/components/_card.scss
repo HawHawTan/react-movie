@@ -21,6 +21,7 @@
         margin-left: 0.5rem;
         flex-direction: column;
         align-items: center;
+        text-transform: uppercase;
         svg{
             margin-bottom: 0.2rem;
         }
@@ -50,22 +51,25 @@
             margin-right: 1rem;
             border-radius: 0.5rem;
             background-color: $white-color;
+            text-transform: uppercase;
+         
         }
         #info{
             margin: 1rem 0;
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
+            align-items: center;
         }
     }
 }
 
 #heart{
-    width: 10%;
+    width: 40px;
     opacity: 0.3;
     transition: $transiting;
 }
 #heart-filled {
-    width: 10%;
+    width: 40px;
     opacity: 1;
 }
 
@@ -99,15 +103,6 @@
             transition: $transiting; 
         }
     }
-
-    #heart{
-        width: 10%;
-    }
-    #heart-filled {
-        width: 10%;
-        opacity: 1;
-    }
-
 }
 
 @media (min-width:$desktop) {
@@ -157,18 +152,20 @@
                 border-radius: 1.25rem;
                 #info{
                     position: absolute;
-                    bottom: 0;
+                    bottom: 1rem;
                     left: 0;
                     width: 100%;
                     margin-bottom: 1rem;
                     button{
                         font-size: 0.8rem;
                         left: 1rem;
+                        padding: 0.7rem;
                         border-radius: 0.6rem;
                         background-color: $white-color;
+                     
                     }
                     #heart{
-                        width: 17%;
+                        width: 30px;
                         opacity: 0.3;
                         transition: $transiting;
                         &:hover{
@@ -189,7 +186,7 @@
                 }
                 p{
                     margin-top: 1rem;
-                    width:90%;
+                    width: 90%;
                     font-size: 0.7rem;
                 }
                 h3{
@@ -197,7 +194,6 @@
                     font-size: 1rem;
                     position: absolute;
                     font-weight: bold;
-                    // margin-bottom: 1rem;
                 }
                 
             }
@@ -210,14 +206,12 @@
     @media (min-width:$desktop-larger) {
         #movies-category-desktop{
             button{
-                padding: 1rem 4rem;
+                padding: 1.4rem 4rem;
             }
         }
         #cards-ul {
             li{
                 .overlay{
-                    opacity: 0;
-
                     h3{
                         top: 2rem;
                         font-size: 1.2rem;
@@ -225,6 +219,12 @@
                     p{
                         font-size: 1rem;
                     }
+                    #info{
+                        #heart,#heart-filled{
+                            width: 38px;
+                        }
+                    }
+                   
                 }
                 &:hover .overlay {
                     opacity: 1;
