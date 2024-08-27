@@ -5,9 +5,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   base: '/curtain-drop/',
-  build: {
-    outDir: 'curtain-drop'
-  },
-  plugins: [reactRefresh()],
   plugins: [react()]
 })
