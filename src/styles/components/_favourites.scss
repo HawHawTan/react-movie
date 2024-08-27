@@ -24,6 +24,16 @@
     min-height: 100vh;
 }
 
+.rating-value-favs {
+    padding: 0;
+    margin: 0;
+}
+
+.release-date-favs {
+    padding: 0;
+    margin: 0;
+}
+
 
 @media (min-width:$tablet) {
     .no-favourites {

@@ -49,6 +49,22 @@ function PageFavourites() {
     function formatRating(rating) {
         return `${(rating * 10).toFixed(0)}`;
     }
+    function formatDateWithOrdinal(dateString) {
+        const date = new Date(dateString);
+        const day = date.getDate();
+        const month = date.toLocaleString('en-US', { month: 'long' });
+        const year = date.getFullYear();
+        function getOrdinalSuffix(n) {
+            const s = ["th", "st", "nd", "rd"];
+            const v = n % 100;
+            return s[(v - 20) % 10] || s[v] || s[0];
+        }
+        return `${month} ${day}${getOrdinalSuffix(day)}, ${year}`;
+    }
+    function formatRating(rating) {
+        return `${(rating * 10).toFixed(0)}`;
+    }
+
 
     return (
         <section>
@@ -70,6 +86,10 @@ function PageFavourites() {
                                 </Link>
                                 <div className="overlay">
                                     <h3>{item.title}</h3>
+                                    <p className='rating-value-favs'>
+                                        Movie Rating: <span>{formatRating(item.vote_average)}</span>%
+                                    </p>
+                                    <p id="release-date-favs">{formatDateWithOrdinal(item.release_date)}</p>
                                     <p>{truncateString(item.overview)}</p>
                                     <div id="info">
                                         <Link to={`/details/${item.id}`}>
