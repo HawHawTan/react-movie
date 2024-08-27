@@ -7,7 +7,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    text-transform: uppercase;
 
     .logo-svg {
         width: 12rem;
@@ -18,39 +18,67 @@ header {
         width: 4rem;
         padding: 0.5rem;
         display: block; // Default to showing the hamburger menu
-
-        @media (min-width: 20em) {
-            display: none; // Hide the hamburger menu for screens wider than 320px
-        }
     }
 
     .nav-links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         font-family: $font;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: 600;
-        width: 100%;
+        max-width: 100%;
         background-color: $red-color;
-        text-align: center;
-        margin: 2rem;
+        padding: 1rem 2rem;
+        margin: 0 auto;
+        @media (min-width: 31.25rem) {
+            font-size: 2.2rem;
+        }
 
         .nav-list {
-            display: flex;
             padding: 0.2rem 0.6rem;
             margin: 2rem;
             width: fit-content;
             margin: 0 auto;
         }
 
-        @media (min-width: 20em ) {
-            display: flex; // Always show the nav links for screens wider than 320px
-            justify-content: space-around;
+        @media (min-width: $tablet) {
             margin: 0;
-            width: auto;
+            font-size: 1.7rem;
+        }
+
+        @media (min-width: $desktop) {
+            display: flex; // Always show the nav links for screens wider than 320px
+            justify-content: right;
+            margin: 0;
             background-color: transparent;
+
+            .nav-links {
+                margin: 0;
+            }
+
         }
     }
 
     .menu-open .nav-links {
         display: block; // Ensure the nav links are displayed when the menu is open on smaller screens
+    }
+
+    .nav-link-list {
+        @media (min-width: $tablet ) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    
+}
+
+@media (35.0625rem <= width <= 47.9375rem) {
+    .nav-link-list {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0;
     }
 }

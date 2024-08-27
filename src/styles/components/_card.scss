@@ -1,172 +1,146 @@
 @use "../utilities/vars" as *;
+@use "../utilities/mixins" as *;
 
-#movies-category-desktop{
-    display: none;
-}
-#backdrop{
-    object-fit: cover;
-    width: 100%;
-    height: 900px;
-    margin: 0 auto;
-}
-#movies-category-mobile{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    padding: 1rem 0;
-    background-color: $red-color;
-    position: fixed;
-    bottom: 0;
-    width: 100%; 
-    button{
-        display: flex;
-        margin-left: 0.5rem;
-        flex-direction: column;
-        align-items: center;
-        svg{
-            margin-bottom: 0.2rem;
-        }
-    }
-}
 
 #cards-ul{
+    @include body-font;
     display: flex;
     flex-direction: column;
     align-items: center;
     li{
         position: relative;
-        img{
+        margin-bottom: 3rem;
+        #card-img{
             margin: 0 2rem;
             width: 80%;
-            border-radius: 10px;
+            border-radius: 1.25rem;
         }
         h3,p{
             display: none
         };
         button{
-            // margin-left: 2rem;
-            // margin-top: 1rem;
-            // margin-bottom: 2rem;
-            padding: 0.5rem 1rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            padding: 0.4rem 1.2rem;
+            margin-right: 1rem;
             border-radius: 0.5rem;
-            background-color: white;
+            background-color: $white-color;
         }
         #info{
             margin: 1rem 0;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
         }
-        // .overlay {
-        //     display: none;
-        // }
     }
-    
 }
+
 #heart{
     width: 10%;
     opacity: 0.3;
     transition: $transiting;
-    &:hover{
-        transition: $transiting;
-        opacity: 1;
-    }
+}
+#heart-filled {
+    width: 10%;
+    opacity: 1;
 }
 
 @media (min-width:$tablet) {
-    #movies-category-mobile{
-        display: none;
-    }
-
-    #movies-category-desktop{
-        display: flex;
-        justify-content: space-evenly;
-        padding: 0.5rem 0;
-        background-color: #0D0D0D;
-        width: 70%;
-        margin: 1rem auto;
-        border-radius: 2rem;
-    
-        button{
-            border: 4px $red-color solid;
-            padding: 1rem 2rem;
-            border-radius: 2rem;
-            color: white;
-            transition: $transiting; 
-            &:hover{
-                background-color: $red-color;
-                transition: $transiting; 
-            }
-        }
-    }
     #cards-ul{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        
     }
+
+    #heart{
+        width: 10%;
+    }
+    #heart-filled {
+        width: 10%;
+        opacity: 1;
+    }
+
 }
 
-// change the desktop to rem
 @media (min-width:$desktop) {
-    #movies-category-desktop{
-        padding: 1rem 0;
-        button{
-            font-size: 1.3rem;
-            padding: 1rem 3rem;
-        }
-    }
     #cards-ul {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        margin:0  1rem;
-        gap: 1rem;
-    
+        gap: 2rem 1rem;
+        padding: 2rem;
+
         li {
             position: relative; 
-            overflow: hidden;
             transition: $transiting; 
-            img {
+            #card-img {
                 width: 100%;
                 height: 100%;
-                margin: 1rem
+                margin: 0;
+            }
+            #info{
+                margin: 0;
             }
             .overlay {
                 position: absolute;
-                top: 1rem;
-                left: 1rem;
-                width: 98%;
-                height: 94%;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
                 background-color: rgba(0, 0, 0, 0.78); 
-                color: white;
+                color: $white-color;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 opacity: 0;
                 transition: $transiting; 
-                border-radius: 0.5rem; 
                 text-align: center;
+                border-radius: 1.25rem;
                 #info{
                     position: absolute;
-                    bottom: 2rem;
+                    bottom: 0;
+                    left: 0;
                     width: 100%;
-                    align-items: center;
+                    margin-bottom: 1rem;
                     button{
+                        font-size: 0.8rem;
                         left: 1rem;
-                        border-radius: 0.5rem;
-                        background-color: white;
+                        border-radius: 0.6rem;
+                        background-color: $white-color;
                     }
-
+                    #heart{
+                        width: 17%;
+                        opacity: 0.3;
+                        transition: $transiting;
+                        &:hover{
+                            transition: $transiting;
+                            opacity: 1;
+                        }
+                    }
+                    #heart-filled {
+                        width: 17%;
+                        opacity: 1;
+                    }
                 }
                 p,h3{
                     display: block;
                 }
+                #release-date{
+                    margin: 1.2rem 0;
+                }
                 p{
+                    margin-top: 1rem;
                     width:90%;
+                    font-size: 0.7rem;
                 }
                 h3{
-                    top: 4rem;
-                    font-size: 1.4rem;
+                    top: 2rem;
+                    font-size: 1rem;
                     position: absolute;
                     font-weight: bold;
+                    // margin-bottom: 1rem;
                 }
+                
             }
     
             &:hover .overlay {
@@ -174,13 +148,24 @@
             }
         }
     }
-    #heart{
-        width: 13%;
-        opacity: 0.5;
-        transition: $transiting;
-        &:hover{
-            transition: $transiting;
-            opacity: 1;
+    @media (min-width:$desktop-larger) {
+        #cards-ul {
+            li{
+                .overlay{
+                    opacity: 0;
+
+                    h3{
+                        top: 2rem;
+                        font-size: 1.2rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+                &:hover .overlay {
+                    opacity: 1;
+                }
+            }
         }
     }
 }

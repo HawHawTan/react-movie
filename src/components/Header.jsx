@@ -8,8 +8,8 @@ function Header() {
 
     useEffect(() => {
         function handleResize() {
-            setIsSmallScreen(window.innerWidth <= 320);
-            if (window.innerWidth > 320) {
+            setIsSmallScreen(window.innerWidth <= 560);
+            if (window.innerWidth > 560) {
                 setIsHamburgerMenuOpen(false);
             }
         }
@@ -36,7 +36,7 @@ function Header() {
                     alt="Curtain Drop Logo"
                 />
             )}
-            
+
             {(!isSmallScreen || isHamburgerMenuOpen) && <Nav />}
         </header>
     );

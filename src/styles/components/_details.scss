@@ -4,16 +4,41 @@
 
 .backdrop-movie {
     display: none;
-    margin-top: -1rem;
+    width: 100%;
+}
+
+.heart-poster-wrap {
+    position: relative;
 }
 
 .poster-movie {
     width: 18.125rem;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 1rem auto;
     border-radius: 1.25rem;
+}
+
+.heart {
+    width: 3rem;
+    height: auto;
+    position: absolute;
+    bottom: .5rem;
+    left: 65%;
+    z-index: 10;
+    opacity: 0.3;
+    transition: $transiting;
+}
+.heart-filled {
+    width: 3rem;
+    height: auto;
+    position: absolute;
+    bottom: .5rem;
+    left: 65%;
+    z-index: 10;
+    opacity: 1;
 }
 
 .title-detail {
@@ -50,6 +75,7 @@
     margin: 1rem auto;
 }
 
+
 .rating-value {
     display: flex;
     align-items: center;
@@ -59,10 +85,39 @@
     vertical-align: middle;
 }
 
-@media (min-width: 51.25em) {
+@media (min-width: $tablet) {
+    .heart {
+        left: 60%;
+    }
+    .heart-filled {
+        left: 60%;
+        &:hover{
+            transition: $transiting;
+            opacity: 1;
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .heart {
+        left: 55%;
+    }
+    .heart-filled {
+        left: 55%;
+        &:hover{
+            transition: $transiting;
+            opacity: 1;
+        }
+    }
+}
+
+
+@media (min-width: $desktop) {
     .backdrop-movie {
         display: block;
-        object-view-box: inset(5rem 0% 45rem 0%);
+        object-fit: cover;
+        height: 70vh;
+    
 
     }
 
@@ -82,7 +137,7 @@
     }
 
     .movie-info {
-        margin: 3.4rem 7.5rem 6.5rem;
+        margin: 1rem 7.5rem 6.5rem;
     }
 }
 
@@ -95,7 +150,28 @@
     }
 
     .rating-detail {
-        margin-left: 10rem;
+        margin-left: 19rem;
+    }
+
+    .heart {
+        width: 3rem;
+        height: auto;
+        position: absolute;
+        bottom: .5rem;
+        left: 22%;
+        z-index: 10;
+    }
+    .heart-filled {
+        width: 3rem;
+        height: auto;
+        position: absolute;
+        bottom: .5rem;
+        left: 22%;
+        z-index: 10;
+            &:hover{
+                transition: $transiting;
+                opacity: 1;
+            }
     }
 
     .text-detail-wrap {
@@ -106,8 +182,17 @@
         margin-top: -20rem;
     }
 
+    .title-detail {
+        margin-top: -2rem;
+    }
+
     .title-detail,
     .date-detail {
         text-align: start;
     }
+}
+
+.favourite-rating-wrap {
+    display: flex;
+    flex-direction: row;
 }
