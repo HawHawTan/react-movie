@@ -25,7 +25,7 @@ function PageFavourites() {
         if (str.length <= 10) {
             return str;
         }
-        const truncated = str.slice(0, 100).trim();
+        const truncated = str.slice(0, 50).trim();
         const lastSpaceIndex = truncated.lastIndexOf(" ");
 
         if (lastSpaceIndex > 0) {

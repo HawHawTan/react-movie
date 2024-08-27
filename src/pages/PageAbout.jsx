@@ -18,7 +18,7 @@ const PageAbout = () => {
                 <div className="tmdb-attr">
                     <p className="tmdb-para">"This product uses the TMDb API but is not endorsed or certified by
                     TMDb”</p>
-                    <img className="tmdb-logo" src="../src/media/tmdb_logo.svg" alt="TMDB logo" />
+                    <a href="https://www.themoviedb.org/" target="blank"><img className="tmdb-logo" src="../src/media/tmdb_logo.svg" alt="TMDB logo"/></a>
                 </div>
             </section>
         </div>

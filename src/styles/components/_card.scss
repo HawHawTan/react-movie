@@ -21,7 +21,6 @@
         margin-left: 0.5rem;
         flex-direction: column;
         align-items: center;
-        text-transform: uppercase;
         svg{
             margin-bottom: 0.2rem;
         }
@@ -74,49 +73,24 @@
 }
 
 @media (min-width:$tablet) {
-    #movies-category-mobile{
-        display: none;
-    }
     #cards-ul{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
         
     }
-    #movies-category-desktop{
-        display: flex;
-        justify-content: space-around;
-        padding: 0.5rem 0;
-        background-color: #0D0D0D;
-        width: 80%;
-        margin: 1rem auto;
-        border-radius: 2rem;
-    
-        button{
-            @include body-font;
-            text-transform: uppercase;
-            font-size: 1rem;
-            border: 4px $red-color solid;
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            color: $white-color;
-            transition: $transiting; 
-        }
+
+    #heart{
+        width: 10%;
     }
+    #heart-filled {
+        width: 10%;
+        opacity: 1;
+    }
+
 }
 
 @media (min-width:$desktop) {
-    #movies-category-desktop{
-        padding: 1rem 0;
-        button{
-            font-size: 1.3rem;
-            padding: 1rem 2rem;
-            &:hover{
-                background-color: $red-color;
-                transition: $transiting; 
-            }
-        }
-    }
     #cards-ul {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -181,7 +155,7 @@
                     display: block;
                 }
                 #release-date{
-                    margin: 1.2rem 0;
+                    margin-top: 1.2rem;
                 }
                 p{
                     margin-top: 1rem;
@@ -189,6 +163,7 @@
                     font-size: 0.7rem;
                 }
                 h3{
+                    padding: 0 0.5rem;
                     top: 2rem;
                     font-size: 1rem;
                     position: absolute;
@@ -203,11 +178,7 @@
         }
     }
     @media (min-width:$desktop-larger) {
-        #movies-category-desktop{
-            button{
-                padding: 1.4rem 4rem;
-            }
-        }
+        
         #cards-ul {
             li{
                 .overlay{

@@ -4,6 +4,7 @@
 
 .backdrop-movie {
     display: none;
+    width: 100%;
 }
 
 .heart-poster-wrap {
@@ -16,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 1rem auto;
     border-radius: 1.25rem;
 }
 
@@ -114,7 +115,9 @@
 @media (min-width: $desktop) {
     .backdrop-movie {
         display: block;
-        object-view-box: inset(5rem 0% 45rem 0%);
+        object-fit: cover;
+        height: 70vh;
+    
 
     }
 
