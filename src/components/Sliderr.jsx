@@ -53,7 +53,7 @@ function Sliderr({ movies }) {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: isMobile ? 3 : 1,
     slidesToScroll: 1,
     centerMode: true,
