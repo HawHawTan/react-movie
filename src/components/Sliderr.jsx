@@ -58,7 +58,7 @@ function Sliderr({ movies }) {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: isMobile ? "0" : (window.innerWidth > 1300 ? (window.innerWidth > 1600 ? '340px ' : '200px') : "150px"),
-    // autoplay: true,
+    autoplay: true,
   };
 
   if (!movies || movies.length === 0) {
